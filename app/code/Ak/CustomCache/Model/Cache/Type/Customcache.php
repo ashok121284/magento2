@@ -2,7 +2,6 @@
 /**
  * Copyright [first year code created] Adobe
  * All rights reserved.
- * We are revisioning new branch
  */
 
 namespace Ak\CustomCache\Model\Cache\Type;
