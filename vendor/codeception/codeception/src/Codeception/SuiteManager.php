@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Codeception;
 
+use Codeception\Command\Shared\ActorTrait;
 use Codeception\Lib\Di;
 use Codeception\Lib\GroupManager;
 use Codeception\Lib\ModuleContainer;
@@ -20,9 +21,9 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class SuiteManager
 {
-    protected ?Suite $suite = null;
+    use ActorTrait;
 
-    protected ?EventDispatcher $dispatcher = null;
+    protected ?Suite $suite = null;
 
     protected GroupManager $groupManager;
 
@@ -36,10 +37,9 @@ class SuiteManager
 
     private Filter $testFilter;
 
-    public function __construct(EventDispatcher $dispatcher, string $name, array $settings, array $options)
+    public function __construct(protected ?EventDispatcher $dispatcher, string $name, array $settings, array $options)
     {
         $this->settings = $settings;
-        $this->dispatcher = $dispatcher;
         $this->di = new Di();
         $this->groupManager = new GroupManager($settings['groups']);
         $this->moduleContainer = new ModuleContainer($this->di, $settings);
@@ -78,7 +78,7 @@ class SuiteManager
         ini_set('xdebug.show_exception_trace', '0'); // Issue https://github.com/symfony/symfony/issues/7646
     }
 
-    public function loadTests(string $path = null): void
+    public function loadTests(?string $path = null): void
     {
         $testLoader = new Loader($this->settings);
         $testLoader->loadTests($path);
@@ -113,10 +113,10 @@ class SuiteManager
         }
 
         $this->suite->addTest($test);
-
-        if (!empty($groups) && $test instanceof TestInterface) {
-            $test->getMetadata()->setGroups($groups);
+        if ($groups === []) {
+            return;
         }
+        $test->getMetadata()->setGroups($groups);
     }
 
     protected function createSuite(string $name): Suite
@@ -160,30 +160,10 @@ class SuiteManager
         return $this->moduleContainer;
     }
 
-    protected function getActor(): ?string
-    {
-        if (!$this->settings['actor']) {
-            return null;
-        }
-
-        $namespace = "";
-
-        if ($this->settings['namespace']) {
-            $namespace .= '\\' . $this->settings['namespace'];
-        }
-
-        if (isset($this->settings['support_namespace'])) {
-            $namespace .= '\\' . $this->settings['support_namespace'];
-        }
-        $namespace = rtrim($namespace, '\\') . '\\';
-
-        return $namespace . $this->settings['actor'];
-    }
-
     protected function checkEnvironmentExists(TestInterface $test): void
     {
         $envs = $test->getMetadata()->getEnv();
-        if (empty($envs)) {
+        if ($envs === []) {
             return;
         }
         if (!isset($this->settings['env'])) {
@@ -201,13 +181,13 @@ class SuiteManager
     protected function isExecutedInCurrentEnvironment(TestInterface $test): bool
     {
         $envs = $test->getMetadata()->getEnv();
-        if (empty($envs)) {
+        if ($envs === []) {
             return true;
         }
         $currentEnvironments = explode(',', $this->env);
         foreach ($envs as $envList) {
             $envList = explode(',', $envList);
-            if (count($envList) == count(array_intersect($currentEnvironments, $envList))) {
+            if (count($envList) === count(array_intersect($currentEnvironments, $envList))) {
                 return true;
             }
         }
@@ -223,7 +203,7 @@ class SuiteManager
             'modules' => $this->moduleContainer
         ]);
         $test->getMetadata()->setCurrent([
-            'actor' => $this->getActor(),
+            'actor' => $this->getActorClassName(),
             'env' => $this->env,
             'modules' => $this->moduleContainer->all()
         ]);

@@ -416,7 +416,23 @@ class Stub
     private static function generateMock()
     {
         $args = func_get_args();
-        if (version_compare(PHPUnitVersion::series(), '10.4', '>=') && !is_bool($args[1])) {
+        // PHPUnit 11 added the optional parameter $markAsMockObject:
+        // https://github.com/sebastianbergmann/phpunit/commit/db9ae302fe1ad89451ecfacc850e88ab7c6df5a3
+        // The parameter was removed in PHPUnit 12:
+        // https://github.com/sebastianbergmann/phpunit/commit/a98e3939c74f6103cbeb7a785b73eb4a10784474
+        if (version_compare(PHPUnitVersion::series(), '11', '>=') && version_compare(PHPUnitVersion::series(), '12', '<')) {
+            if (!is_bool($args[1]) || !is_bool($args[2])) {
+                $additionalParameters = [];
+                if (!is_bool($args[1])) {
+                    $additionalParameters[] = true;
+                }
+                if (!is_bool($args[2])) {
+                    $additionalParameters[] = true;
+                }
+
+                array_splice($args, 1, 0, $additionalParameters);
+            }
+        } elseif (version_compare(PHPUnitVersion::series(), '10.4', '>=') && !is_bool($args[1])) {
             array_splice($args, 1, 0, [true]);
         }
 
@@ -446,6 +462,10 @@ class Stub
             $methodName = $isAbstract ? 'getMockForAbstractClass' : 'getMock';
         }
 
+        if ($isAbstract && version_compare(PHPUnitVersion::series(), '12', '>=')) {
+            throw new RuntimeException('PHPUnit 12 or greater does not allow to mock abstract classes anymore');
+        }
+
         // PHPUnit 10.3 changed the namespace
         if (version_compare(PHPUnitVersion::series(), '10.3', '>=')) {
             $generatorClass = new Generator();
@@ -456,7 +476,11 @@ class Stub
         $mock = call_user_func_array([$generatorClass, $methodName], $args);
 
         if ($testCase instanceof PHPUnitTestCase) {
-            $testCase->registerMockObject($mock);
+            if (version_compare(PHPUnitVersion::series(), '12.5', '>=')) {
+                $testCase->registerMockObject($mock::class, $mock);
+            } else {
+                $testCase->registerMockObject($mock);
+            }
         }
 
         return $mock;
@@ -530,7 +554,6 @@ class Stub
                 }
             } elseif ($reflectionClass->hasProperty($param)) {
                 $reflectionProperty = $reflectionClass->getProperty($param);
-                $reflectionProperty->setAccessible(true);
                 $reflectionProperty->setValue($mock, $value);
             } else {
                 if ($reflectionClass->hasMethod('__set')) {

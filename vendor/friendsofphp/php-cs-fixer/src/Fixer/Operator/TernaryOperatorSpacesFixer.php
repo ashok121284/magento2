@@ -19,14 +19,15 @@ use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Analyzer\AlternativeSyntaxAnalyzer;
-use PhpCsFixer\Tokenizer\Analyzer\Analysis\SwitchAnalysis;
-use PhpCsFixer\Tokenizer\Analyzer\ControlCaseStructuresAnalyzer;
 use PhpCsFixer\Tokenizer\Analyzer\GotoLabelAnalyzer;
+use PhpCsFixer\Tokenizer\Analyzer\SwitchAnalyzer;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
 /**
  * @author Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * @no-named-arguments Parameter names are not covered by the backward compatibility promise.
  */
 final class TernaryOperatorSpacesFixer extends AbstractFixer
 {
@@ -34,7 +35,7 @@ final class TernaryOperatorSpacesFixer extends AbstractFixer
     {
         return new FixerDefinition(
             'Standardize spaces around ternary operator.',
-            [new CodeSample("<?php \$a = \$a   ?1 :0;\n")]
+            [new CodeSample("<?php \$a = \$a   ?1 :0;\n")],
         );
     }
 
@@ -45,7 +46,7 @@ final class TernaryOperatorSpacesFixer extends AbstractFixer
      */
     public function getPriority(): int
     {
-        return 0;
+        return 1;
     }
 
     public function isCandidate(Tokens $tokens): bool
@@ -58,14 +59,13 @@ final class TernaryOperatorSpacesFixer extends AbstractFixer
         $alternativeSyntaxAnalyzer = new AlternativeSyntaxAnalyzer();
         $gotoLabelAnalyzer = new GotoLabelAnalyzer();
         $ternaryOperatorIndices = [];
-        $excludedIndices = $this->getColonIndicesForSwitch($tokens);
 
         foreach ($tokens as $index => $token) {
             if (!$token->equalsAny(['?', ':'])) {
                 continue;
             }
 
-            if (\in_array($index, $excludedIndices, true)) {
+            if (SwitchAnalyzer::belongsToSwitch($tokens, $index)) {
                 continue;
             }
 
@@ -114,29 +114,6 @@ final class TernaryOperatorSpacesFixer extends AbstractFixer
         }
     }
 
-    /**
-     * @return int[]
-     */
-    private function getColonIndicesForSwitch(Tokens $tokens): array
-    {
-        $colonIndices = [];
-
-        /** @var SwitchAnalysis $analysis */
-        foreach (ControlCaseStructuresAnalyzer::findControlStructures($tokens, [T_SWITCH]) as $analysis) {
-            foreach ($analysis->getCases() as $case) {
-                $colonIndices[] = $case->getColonIndex();
-            }
-
-            $defaultAnalysis = $analysis->getDefaultAnalysis();
-
-            if (null !== $defaultAnalysis) {
-                $colonIndices[] = $defaultAnalysis->getColonIndex();
-            }
-        }
-
-        return $colonIndices;
-    }
-
     private function ensureWhitespaceExistence(Tokens $tokens, int $index, bool $after): void
     {
         if ($tokens[$index]->isWhitespace()) {
@@ -144,13 +121,13 @@ final class TernaryOperatorSpacesFixer extends AbstractFixer
                 !str_contains($tokens[$index]->getContent(), "\n")
                 && !$tokens[$index - 1]->isComment()
             ) {
-                $tokens[$index] = new Token([T_WHITESPACE, ' ']);
+                $tokens[$index] = new Token([\T_WHITESPACE, ' ']);
             }
 
             return;
         }
 
         $index += $after ? 0 : 1;
-        $tokens->insertAt($index, new Token([T_WHITESPACE, ' ']));
+        $tokens->insertAt($index, new Token([\T_WHITESPACE, ' ']));
     }
 }

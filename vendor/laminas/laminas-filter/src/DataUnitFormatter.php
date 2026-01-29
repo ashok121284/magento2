@@ -32,6 +32,7 @@ final class DataUnitFormatter extends AbstractFilter
     public const BASE_BINARY  = 1024;
     public const BASE_DECIMAL = 1000;
 
+    private const DEFAULT_PRECISION = 2;
     /**
      * A list of all possible filter modes:
      *
@@ -64,7 +65,7 @@ final class DataUnitFormatter extends AbstractFilter
     protected $options = [
         'mode'      => self::MODE_DECIMAL,
         'unit'      => '',
-        'precision' => 2,
+        'precision' => self::DEFAULT_PRECISION,
         'prefixes'  => [],
     ];
 
@@ -87,6 +88,9 @@ final class DataUnitFormatter extends AbstractFilter
     /**
      * Define the mode of the filter. Possible values can be fount at self::$modes.
      *
+     * @deprecated Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *             Provide options to the constructor instead
+     *
      * @param string $mode
      * @throws InvalidArgumentException
      */
@@ -102,15 +106,21 @@ final class DataUnitFormatter extends AbstractFilter
     /**
      * Get current filter mode
      *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
+     *
      * @return string
      */
     protected function getMode()
     {
-        return $this->options['mode'];
+        return $this->options['mode'] ?? self::MODE_DECIMAL;
     }
 
     /**
      * Find out if the filter is in decimal mode.
+     *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
      *
      * @return bool
      */
@@ -122,6 +132,9 @@ final class DataUnitFormatter extends AbstractFilter
     /**
      * Find out if the filter is in binary mode.
      *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
+     *
      * @return bool
      */
     protected function isBinaryMode()
@@ -131,6 +144,9 @@ final class DataUnitFormatter extends AbstractFilter
 
     /**
      * Define the unit of the filter. Possible values can be fount at self::$types.
+     *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
      *
      * @param string $unit
      */
@@ -142,15 +158,21 @@ final class DataUnitFormatter extends AbstractFilter
     /**
      * Get current filter type
      *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
+     *
      * @return string
      */
     protected function getUnit()
     {
-        return $this->options['unit'];
+        return $this->options['unit'] ?? '';
     }
 
     /**
      * Set the precision of the filtered result.
+     *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
      *
      * @param int $precision
      */
@@ -162,15 +184,21 @@ final class DataUnitFormatter extends AbstractFilter
     /**
      * Get the precision of the filtered result.
      *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
+     *
      * @return int
      */
     protected function getPrecision()
     {
-        return $this->options['precision'];
+        return $this->options['precision'] ?? self::DEFAULT_PRECISION;
     }
 
     /**
      * Set the precision of the result.
+     *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
      *
      * @param list<string> $prefixes
      */
@@ -182,12 +210,15 @@ final class DataUnitFormatter extends AbstractFilter
     /**
      * Get the predefined prefixes or use the build-in standardized lists of prefixes.
      *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
+     *
      * @return list<string>
      */
     protected function getPrefixes()
     {
-        $prefixes = $this->options['prefixes'];
-        if ($prefixes) {
+        $prefixes = $this->options['prefixes'] ?? null;
+        if ($prefixes !== null && $prefixes !== []) {
             return $prefixes;
         }
 
@@ -196,6 +227,9 @@ final class DataUnitFormatter extends AbstractFilter
 
     /**
      * Find the prefix at a specific location in the prefixes array.
+     *
+     * @deprecated  Since 2.37.0 - Option getters and setters will be removed in 3.0.
+     *              Provide options to the constructor instead
      *
      * @return string|null
      */

@@ -218,7 +218,7 @@ class JUnitReporter implements EventSubscriberInterface
         $this->currentTestCase = $this->document->createElement('testcase');
 
         foreach ($test->getReportFields() as $attr => $value) {
-            if ($this->isStrict and !in_array($attr, $this->strictAttributes)) {
+            if ($this->isStrict && !in_array($attr, $this->strictAttributes)) {
                 continue;
             }
             $this->currentTestCase->setAttribute($attr, $value);
@@ -247,7 +247,12 @@ class JUnitReporter implements EventSubscriberInterface
 
         if ($test instanceof TestCaseWrapper) {
             $testCase = $test->getTestCase();
-            if (version_compare(PHPUnitVersion::series(), '10.3', '>=')) {
+            $phpunitVersion = PHPUnitVersion::series();
+            if (version_compare($phpunitVersion, '11.0', '>=')) {
+                if (!$testCase->expectsOutput()) {
+                    $testOutput = $testCase->output();
+                }
+            } elseif (version_compare($phpunitVersion, '10.3', '>=')) {
                 if (!$testCase->expectsOutput()) {
                     $testOutput = $testCase->getActualOutputForAssertion();
                 }
@@ -308,7 +313,7 @@ class JUnitReporter implements EventSubscriberInterface
 
     public function testSkipped(FailEvent $event): void
     {
-        if ($this->currentTestCase === null) {
+        if (!$this->currentTestCase instanceof DOMElement) {
             return;
         }
 
@@ -320,7 +325,7 @@ class JUnitReporter implements EventSubscriberInterface
 
     public function testUseless(FailEvent $event): void
     {
-        if ($this->currentTestCase === null) {
+        if (!$this->currentTestCase instanceof DOMElement) {
             return;
         }
 
@@ -338,7 +343,7 @@ class JUnitReporter implements EventSubscriberInterface
      */
     private function doAddFault(Test $test, Throwable $t, string $type): void
     {
-        if ($this->currentTestCase === null) {
+        if (!$this->currentTestCase instanceof DOMElement) {
             return;
         }
 

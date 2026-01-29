@@ -47,21 +47,28 @@ class HeadLink extends AbstractStandalone
      * @var string[]
      */
     protected $itemKeys = [
+        'as',
+        'blocking',
         'charset',
+        'crossorigin',
+        'disabled',
+        'extras',
+        'fetchpriority',
         'href',
         'hreflang',
         'id',
+        'imagesizes',
+        'imagesrcset',
+        'integrity',
+        'itemprop',
+        'lang',
         'media',
+        'referrerpolicy',
         'rel',
         'rev',
         'sizes',
-        'type',
         'title',
-        'extras',
-        'itemprop',
-        'crossorigin',
-        'integrity',
-        'as',
+        'type',
     ];
 
     /**
@@ -81,6 +88,9 @@ class HeadLink extends AbstractStandalone
      *
      * Allows calling $helper->headLink(), but, more importantly, chaining calls
      * like ->appendStylesheet()->headLink().
+     *
+     * @deprecated Since 2.40.0 This method will be removed in 3.0 - it is no longer necessary as
+     *             `__invoke` is called directly
      *
      * @param  array<string, mixed>|null $attributes
      * @param  string     $placement
@@ -143,6 +153,10 @@ class HeadLink extends AbstractStandalone
      *   - public function appendSection()
      *   - public function appendSubsection()
      *
+     * @deprecated Since 2.40.0 All magic methods will no longer be accessible in 3.0. Some of the supported methods
+     *             will be re-implemented as concrete methods such as `appendStylesheet` and `prependStylesheet`
+     *             but there will also be signature changes and further simplifications.
+     *
      * @param  string $method
      * @param  mixed $args
      * @throws Exception\BadMethodCallException
@@ -182,7 +196,7 @@ class HeadLink extends AbstractStandalone
                 $item       = $this->$dataMethod($args);
             }
 
-            if ($item) {
+            if (is_object($item)) {
                 if ('offsetSet' === $action) {
                     $this->offsetSet($index, $item);
                 } else {
@@ -241,12 +255,14 @@ class HeadLink extends AbstractStandalone
     /**
      * offsetSet()
      *
-     * @param int $index
+     * @deprecated Since 2.40.0 It will not be possible to get or set link entries at specific indexes in version 3.0
+     *
+     * @param int $offset
      * @param object $value
-     * @throws Exception\InvalidArgumentException
      * @return void
+     * @throws Exception\InvalidArgumentException
      */
-    public function offsetSet($index, $value)
+    public function offsetSet($offset, $value)
     {
         if (! $this->isValid($value)) {
             throw new Exception\InvalidArgumentException(
@@ -254,7 +270,7 @@ class HeadLink extends AbstractStandalone
             );
         }
 
-        $this->getContainer()->offsetSet($index, $value);
+        $this->getContainer()->offsetSet($offset, $value);
     }
 
     /**
@@ -392,7 +408,6 @@ class HeadLink extends AbstractStandalone
      *
      * @deprecated This method is unused and will be removed in version 3.0 of this component
      *
-     * @param  array $args
      * @return object|false Returns false if stylesheet is a duplicate
      */
     public function createDataStylesheet(array $args)
@@ -465,7 +480,6 @@ class HeadLink extends AbstractStandalone
      *
      * @deprecated This method is unused and will be removed in version 3.0 of this component
      *
-     * @param  array $args
      * @throws Exception\InvalidArgumentException
      * @return object
      */
@@ -508,7 +522,6 @@ class HeadLink extends AbstractStandalone
      *
      * @deprecated This method is unused and will be removed in version 3.0 of this component
      *
-     * @param  array $args
      * @return object
      */
     public function createDataPrev(array $args)
@@ -524,7 +537,6 @@ class HeadLink extends AbstractStandalone
      *
      * @deprecated This method is unused and will be removed in version 3.0 of this component
      *
-     * @param  array $args
      * @return object
      */
     public function createDataNext(array $args)

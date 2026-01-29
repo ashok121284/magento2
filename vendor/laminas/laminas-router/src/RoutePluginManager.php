@@ -11,8 +11,7 @@ use Laminas\ServiceManager\ServiceManager;
 use Psr\Container\ContainerInterface;
 
 use function array_merge;
-use function gettype;
-use function is_object;
+use function get_debug_type;
 use function sprintf;
 
 /**
@@ -61,7 +60,6 @@ class RoutePluginManager extends AbstractPluginManager
      * abstract factory.
      *
      * @param ContainerInterface|ConfigInterface $configOrContainerInstance
-     * @param array $v3config
      * @psalm-param ServiceManagerConfiguration $v3config
      */
     public function __construct($configOrContainerInstance, array $v3config = [])
@@ -81,7 +79,7 @@ class RoutePluginManager extends AbstractPluginManager
         if (! $instance instanceof $this->instanceOf) {
             throw new InvalidServiceException(sprintf(
                 'Plugin of type %s is invalid; must implement %s',
-                is_object($instance) ? $instance::class : gettype($instance),
+                get_debug_type($instance),
                 RouteInterface::class
             ));
         }
@@ -114,7 +112,6 @@ class RoutePluginManager extends AbstractPluginManager
      * component-specific RouteInvokableFactory; removes the invokables entry
      * before passing to the parent.
      *
-     * @param array $config
      * @psalm-param ServiceManagerConfiguration $config
      * @return $this
      */

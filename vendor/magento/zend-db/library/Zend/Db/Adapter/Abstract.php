@@ -777,7 +777,9 @@ abstract class Zend_Db_Adapter_Abstract
         $data = array();
         while ($row = $stmt->fetch(Zend_Db::FETCH_ASSOC)) {
             $tmp = array_values(array_slice($row, 0, 1));
-            $data[$tmp[0]] = $row;
+            if (isset($tmp[0]) && $tmp[0] !== null) {
+                $data[$tmp[0]] = $row;
+            }
         }
         return $data;
     }
@@ -811,7 +813,9 @@ abstract class Zend_Db_Adapter_Abstract
         $stmt = $this->query($sql, $bind);
         $data = array();
         while ($row = $stmt->fetch(Zend_Db::FETCH_NUM)) {
-            $data[$row[0]] = $row[1];
+            if ($row[0] !== null) {
+                $data[$row[0]] = $row[1];
+            }
         }
         return $data;
     }

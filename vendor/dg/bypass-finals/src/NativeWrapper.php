@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace DG;
+namespace DG\BypassFinals;
 
 
 /**
- * Wrapper using native functions for working with files and directories.
+ * A stream wrapper class that uses native PHP functions for file and directory operations.
  * @internal
  */
-class NativeWrapper
+final class NativeWrapper
 {
-	private const PROTOCOL = 'file';
+	public const Protocol = 'file';
 
-	/** @var string */
-	public static $outerWrapper;
+	/** @var string  Reference to the outer wrapper class for re-registration */
+	public $outerWrapper = MutatingWrapper::class;
 
-	/** @var resource|null */
+	/** @var resource|null  Stream context, which may be set by stream functions */
 	public $context;
 
-	/** @var resource|null */
+	/** @var resource|null  File handle, which may be set by stream functions */
 	public $handle;
 
 
@@ -121,9 +121,9 @@ class NativeWrapper
 				return $this->native('chgrp', $path, $value);
 			case STREAM_META_ACCESS:
 				return $this->native('chmod', $path, $value);
+			default:
+				return false;
 		}
-
-		return false;
 	}
 
 
@@ -149,9 +149,20 @@ class NativeWrapper
 	}
 
 
-	public function stream_set_option(int $option, int $arg1, ?int $arg2): bool
+	public function stream_set_option(int $option, int $arg1, ?int $arg2)
 	{
-		return false;
+		switch ($option) {
+			case STREAM_OPTION_BLOCKING:
+				return stream_set_blocking($this->handle, (bool) $arg1);
+			case STREAM_OPTION_READ_BUFFER:
+				return stream_set_read_buffer($this->handle, $arg2);
+			case STREAM_OPTION_WRITE_BUFFER:
+				return stream_set_write_buffer($this->handle, $arg2);
+			case STREAM_OPTION_READ_TIMEOUT:
+				return stream_set_timeout($this->handle, $arg1, $arg2);
+			default:
+				return false;
+		}
 	}
 
 
@@ -187,26 +198,36 @@ class NativeWrapper
 
 	public function url_stat(string $path, int $flags)
 	{
+		if ($flags & STREAM_URL_STAT_QUIET) {
+			set_error_handler(function () {
+				return true;
+			});
+		}
 		try {
 			$func = $flags & STREAM_URL_STAT_LINK ? 'lstat' : 'stat';
-			return $flags & STREAM_URL_STAT_QUIET
-				? @$this->native($func, $path)
-				: $this->native($func, $path);
+			return $this->native($func, $path);
 		} catch (\RuntimeException $e) {
 			// SplFileInfo::isFile throws exception
 			return false;
+		} finally {
+			if ($flags & STREAM_URL_STAT_QUIET) {
+				restore_error_handler();
+			}
 		}
 	}
 
 
+	/**
+	 * Temporarily restores the native protocol handler to perform operations.
+	 */
 	private function native(string $func)
 	{
-		stream_wrapper_restore(self::PROTOCOL);
+		stream_wrapper_restore(self::Protocol);
 		try {
 			return $func(...array_slice(func_get_args(), 1));
 		} finally {
-			stream_wrapper_unregister(self::PROTOCOL);
-			stream_wrapper_register(self::PROTOCOL, self::$outerWrapper);
+			stream_wrapper_unregister(self::Protocol);
+			stream_wrapper_register(self::Protocol, $this->outerWrapper);
 		}
 	}
 }

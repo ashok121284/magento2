@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Codeception\Test;
 
+use Codeception\Actor;
 use Codeception\Exception\InvalidTestException;
 use Codeception\Exception\TestParseException;
 use Codeception\Util\Annotation;
@@ -16,7 +17,7 @@ use function sprintf;
 
 class DataProvider
 {
-    public static function getDataForMethod(ReflectionMethod $method, ?ReflectionClass $class = null): ?iterable
+    public static function getDataForMethod(ReflectionMethod $method, ?ReflectionClass $class = null, ?Actor $I = null): ?iterable
     {
         $testClass = self::getTestClass($method, $class);
         $testClassName = $testClass->getName();
@@ -44,7 +45,7 @@ class DataProvider
         // dataProvider annotation
         $dataProviderAnnotations = Annotation::forMethod($testClassName, $methodName)->fetchAll('dataProvider');
         // lowercase for back compatible
-        if (empty($dataProviderAnnotations)) {
+        if ($dataProviderAnnotations === []) {
             $dataProviderAnnotations = Annotation::forMethod($testClassName, $methodName)->fetchAll('dataprovider');
         }
 
@@ -62,16 +63,17 @@ class DataProvider
             try {
                 $dataProviderMethod = new ReflectionMethod($dataProviderClassName, $dataProviderMethodName);
                 if ($dataProviderMethod->isStatic()) {
-                    $dataProviderResult = call_user_func([$dataProviderClassName, $dataProviderMethodName]);
+                    $dataProviderResult = call_user_func([$dataProviderClassName, $dataProviderMethodName], $I);
                 } else {
                     $testInstance = new $dataProviderClassName($dataProviderMethodName);
 
                     if ($dataProviderMethod->isPublic()) {
-                        $dataProviderResult = $testInstance->$dataProviderMethodName();
+                        $dataProviderResult = $testInstance->$dataProviderMethodName($I);
                     } else {
                         $dataProviderResult = ReflectionHelper::invokePrivateMethod(
                             $testInstance,
                             $dataProviderMethodName,
+                            [$I]
                         );
                     }
                 }
@@ -134,8 +136,8 @@ class DataProvider
     {
         $dataProviderDeclaringClass = $dataProviderMethod->getDeclaringClass();
         // data provider in abstract class?
-        if ($dataProviderDeclaringClass->isAbstract() && null !== $testClass && $dataProviderDeclaringClass->name !== $testClass->name) {
-            $dataProviderDeclaringClass = $testClass;
+        if ($dataProviderDeclaringClass->isAbstract() && $testClass instanceof ReflectionClass && $dataProviderDeclaringClass->name !== $testClass->name) {
+            return $testClass;
         }
         return $dataProviderDeclaringClass;
     }

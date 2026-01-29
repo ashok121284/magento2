@@ -16,6 +16,8 @@ namespace PhpCsFixer\FixerConfiguration;
 
 /**
  * @internal
+ *
+ * @no-named-arguments Parameter names are not covered by the backward compatibility promise.
  */
 final class FixerOptionSorter
 {
@@ -30,7 +32,7 @@ final class FixerOptionSorter
             $options = iterator_to_array($options, false);
         }
 
-        usort($options, static fn (FixerOptionInterface $a, FixerOptionInterface $b): int => strcmp($a->getName(), $b->getName()));
+        usort($options, static fn (FixerOptionInterface $a, FixerOptionInterface $b): int => $a->getName() <=> $b->getName());
 
         return $options;
     }

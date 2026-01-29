@@ -284,11 +284,7 @@ class TreeRouteStack extends SimpleRouteStack
      */
     public function getPrototype($name)
     {
-        if (isset($this->prototypes[$name])) {
-            return $this->prototypes[$name];
-        }
-
-        return null;
+        return $this->prototypes[$name] ?? null;
     }
 
     /**
@@ -297,7 +293,6 @@ class TreeRouteStack extends SimpleRouteStack
      * @see    \Laminas\Router\RouteInterface::match()
      *
      * @param  int|null $pathOffset
-     * @param  array $options
      * @return RouteMatch|null
      */
     public function match(Request $request, $pathOffset = null, array $options = [])
@@ -352,8 +347,6 @@ class TreeRouteStack extends SimpleRouteStack
      *
      * @see    \Laminas\Router\RouteInterface::assemble()
      *
-     * @param  array $params
-     * @param  array $options
      * @return mixed
      * @throws Exception\InvalidArgumentException
      * @throws Exception\RuntimeException
@@ -387,7 +380,7 @@ class TreeRouteStack extends SimpleRouteStack
             return $this->baseUrl . $route->assemble(array_merge($this->defaultParams, $params), $options);
         }
 
-        if (! isset($options['uri'])) {
+        if (! isset($options['uri']) || ! $options['uri'] instanceof HttpUri) {
             $uri = new HttpUri();
 
             if (isset($options['force_canonical']) && $options['force_canonical']) {

@@ -18,6 +18,7 @@ use function array_key_last;
 use function array_reverse;
 use function assert;
 use function is_array;
+use function is_bool;
 use function method_exists;
 use function sprintf;
 use function strlen;
@@ -45,7 +46,6 @@ class Chain extends TreeRouteStack implements RouteInterface
     /**
      * Create a new part route.
      *
-     * @param array                            $routes
      * @param RoutePluginManager<TRoute>       $routePlugins
      * @param ArrayObject<string, TRoute>|null $prototypes
      */
@@ -107,7 +107,6 @@ class Chain extends TreeRouteStack implements RouteInterface
      * @see    \Laminas\Router\RouteInterface::match()
      *
      * @param  int|null $pathOffset
-     * @param  array    $options
      * @return RouteMatch|null
      */
     public function match(Request $request, $pathOffset = null, array $options = [])
@@ -156,8 +155,6 @@ class Chain extends TreeRouteStack implements RouteInterface
      *
      * @see    \Laminas\Router\RouteInterface::assemble()
      *
-     * @param  array $params
-     * @param  array $options
      * @return mixed
      */
     public function assemble(array $params = [], array $options = [])
@@ -175,7 +172,7 @@ class Chain extends TreeRouteStack implements RouteInterface
 
         foreach ($routes as $key => $route) {
             $chainOptions = $options;
-            $hasChild     = $options['has_child'] ?? false;
+            $hasChild     = isset($options['has_child']) && is_bool($options['has_child']) && $options['has_child'];
 
             $chainOptions['has_child'] = $hasChild || $key !== $lastRouteKey;
 

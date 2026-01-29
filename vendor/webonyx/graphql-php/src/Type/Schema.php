@@ -69,9 +69,11 @@ class Schema
     /** @var array<int, Error> */
     private array $validationErrors;
 
+    public ?string $description;
+
     public ?SchemaDefinitionNode $astNode;
 
-    /** @var array<int, SchemaExtensionNode> */
+    /** @var array<SchemaExtensionNode> */
     public array $extensionASTNodes = [];
 
     /**
@@ -85,7 +87,7 @@ class Schema
      */
     public function __construct($config)
     {
-        if (\is_array($config)) {
+        if (is_array($config)) {
             $config = SchemaConfig::create($config);
         }
 
@@ -95,6 +97,7 @@ class Schema
             $this->validationErrors = [];
         }
 
+        $this->description = $config->description;
         $this->astNode = $config->astNode;
         $this->extensionASTNodes = $config->extensionASTNodes;
 
@@ -116,7 +119,7 @@ class Schema
     {
         if (! $this->fullyLoaded) {
             $types = $this->config->types;
-            if (\is_callable($types)) {
+            if (is_callable($types)) {
                 $types = $types();
             }
 
@@ -505,7 +508,7 @@ class Schema
         $errors = $this->validate();
 
         if ($errors !== []) {
-            throw new InvariantViolation(\implode("\n\n", $this->validationErrors));
+            throw new InvariantViolation(implode("\n\n", $this->validationErrors));
         }
 
         $internalTypes = Type::getStandardTypes() + Introspection::getTypes();

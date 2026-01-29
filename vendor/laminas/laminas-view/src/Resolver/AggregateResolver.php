@@ -13,6 +13,7 @@ use ReturnTypeWillChange;
 use Traversable;
 
 use function count;
+use function is_string;
 
 /**
  * @final
@@ -20,8 +21,10 @@ use function count;
  */
 class AggregateResolver implements Countable, IteratorAggregate, Resolver
 {
+    /** @deprecated since 2.40.0 In 3.0 of View, the resolver will not track failure sources */
     public const FAILURE_NO_RESOLVERS = 'AggregateResolver_Failure_No_Resolvers';
-    public const FAILURE_NOT_FOUND    = 'AggregateResolver_Failure_Not_Found';
+    /** @deprecated since 2.40.0 In 3.0 of View, the resolver will not track failure sources */
+    public const FAILURE_NOT_FOUND = 'AggregateResolver_Failure_Not_Found';
 
     /**
      * Last lookup failure
@@ -110,7 +113,7 @@ class AggregateResolver implements Countable, IteratorAggregate, Resolver
              * @todo This loop should be modified to try { return resolve } catch { continue } in v3.0
              */
             $resource = $resolver->resolve($name, $renderer);
-            if ($resource) {
+            if (is_string($resource)) {
                 // Resource found; return it
                 $this->lastSuccessfulResolver = $resolver;
                 return $resource;

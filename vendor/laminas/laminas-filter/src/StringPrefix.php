@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Laminas\Filter;
 
-use function gettype;
-use function is_object;
+use function get_debug_type;
 use function is_scalar;
 use function is_string;
 use function sprintf;
@@ -37,6 +36,8 @@ class StringPrefix extends AbstractFilter
     /**
      * Set the prefix string
      *
+     * @deprecated Since 2.38.0 All option setters and getters will be removed in version 3.0
+     *
      * @param  string $prefix
      * @return self
      * @throws Exception\InvalidArgumentException
@@ -47,7 +48,7 @@ class StringPrefix extends AbstractFilter
             throw new Exception\InvalidArgumentException(sprintf(
                 '%s expects "prefix" to be string; received "%s"',
                 __METHOD__,
-                is_object($prefix) ? $prefix::class : gettype($prefix)
+                get_debug_type($prefix),
             ));
         }
 
@@ -58,6 +59,8 @@ class StringPrefix extends AbstractFilter
 
     /**
      * Returns the prefix string, which is appended at the beginning of the input value
+     *
+     * @deprecated Since 2.38.0 All option setters and getters will be removed in version 3.0
      *
      * @return string
      */

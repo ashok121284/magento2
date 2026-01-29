@@ -44,6 +44,8 @@ use const E_USER_ERROR;
  * Base class for navigational helpers.
  *
  * Duck-types against Laminas\I18n\Translator\TranslatorAwareInterface.
+ *
+ * @deprecated This class has been moved to the `Laminas\Navigation` component and will be removed in 3.0
  */
 abstract class AbstractHelper extends View\Helper\AbstractHtmlElement implements
     EventManagerAwareInterface,
@@ -618,7 +620,7 @@ abstract class AbstractHelper extends View\Helper\AbstractHtmlElement implements
     /**
      * Sets the maximum depth a page can have to be included when rendering
      *
-     * @param  int $maxDepth Default is null, which sets no maximum depth.
+     * @param  int|null|numeric-string $maxDepth Default is null, which sets no maximum depth.
      * @return AbstractHelper
      */
     public function setMaxDepth($maxDepth = null)
@@ -645,7 +647,7 @@ abstract class AbstractHelper extends View\Helper\AbstractHtmlElement implements
     /**
      * Sets the minimum depth a page must have to be included when rendering
      *
-     * @param  int $minDepth Default is null, which sets no minimum depth.
+     * @param  int|null|numeric-string $minDepth Default is null, which sets no minimum depth.
      * @return AbstractHelper
      */
     public function setMinDepth($minDepth = null)

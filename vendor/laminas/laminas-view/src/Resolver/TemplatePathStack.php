@@ -15,11 +15,11 @@ use Traversable;
 use function array_change_key_case;
 use function count;
 use function file_exists;
+use function get_debug_type;
 use function gettype;
 use function in_array;
 use function ini_get;
 use function is_array;
-use function is_object;
 use function is_string;
 use function ltrim;
 use function pathinfo;
@@ -121,6 +121,9 @@ class TemplatePathStack implements ResolverInterface
     /**
      * Configure object
      *
+     * @deprecated Since 2.40.0 This method will be removed in 3.0 and options must be provided to the constructor. A
+     *             factory will be provided to ease this process
+     *
      * @param  Options|Traversable<string, mixed> $options
      * @return void
      * @throws Exception\InvalidArgumentException
@@ -131,7 +134,7 @@ class TemplatePathStack implements ResolverInterface
         if (! is_array($options) && ! $options instanceof Traversable) {
             throw new Exception\InvalidArgumentException(sprintf(
                 'Expected array or Traversable object; received "%s"',
-                is_object($options) ? $options::class : gettype($options)
+                get_debug_type($options),
             ));
         }
 
@@ -158,7 +161,10 @@ class TemplatePathStack implements ResolverInterface
     /**
      * Set default file suffix
      *
-     * @param  string $defaultSuffix
+     * @deprecated Since 2.40.0 Runtime mutation of options will not be possible in version 3.0 and options must be
+     *             passed to the constructor instead
+     *
+     * @param string $defaultSuffix
      * @return $this
      */
     public function setDefaultSuffix($defaultSuffix)
@@ -170,6 +176,8 @@ class TemplatePathStack implements ResolverInterface
 
     /**
      * Get default file suffix
+     *
+     * @deprecated  Since 2.40.0 This method will be removed in 3.0 without replacement
      *
      * @return string
      */
@@ -223,7 +231,9 @@ class TemplatePathStack implements ResolverInterface
     /**
      * Normalize a path for insertion in the stack
      *
-     * @param  string $path
+     * @deprecated  Since 2.40.0 This method is internal and will be removed in 3.0 without replacement
+     *
+     * @param string $path
      * @return string
      */
     public static function normalizePath($path)
@@ -278,7 +288,10 @@ class TemplatePathStack implements ResolverInterface
     /**
      * Set LFI protection flag
      *
-     * @param  bool $flag
+     * @deprecated Since 2.40.0 Runtime mutation of options/behaviour is deprecated. Options should be passed to
+     *             the constructor instead.
+     *
+     * @param bool $flag
      * @return TemplatePathStack
      */
     public function setLfiProtection($flag)
@@ -289,6 +302,8 @@ class TemplatePathStack implements ResolverInterface
 
     /**
      * Return status of LFI protection flag
+     *
+     * @deprecated Since 2.40.0 This method will be removed in 3.0 without replacement
      *
      * @return bool
      */

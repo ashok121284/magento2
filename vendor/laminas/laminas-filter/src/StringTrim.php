@@ -44,6 +44,9 @@ class StringTrim extends AbstractFilter
     /**
      * Sets the charList option
      *
+     * @deprecated Since 2.38.0 Getters and setters will be removed in 3.0 in favour of passing options
+     *             to the constructor
+     *
      * @param  string $charList
      * @return self Provides a fluent interface
      */
@@ -60,6 +63,9 @@ class StringTrim extends AbstractFilter
 
     /**
      * Returns the charList option
+     *
+     * @deprecated Since 2.38.0 Getters and setters will be removed in 3.0 in favour of passing options
+     *              to the constructor
      *
      * @return string|null
      */
@@ -84,11 +90,13 @@ class StringTrim extends AbstractFilter
         }
         $value = (string) $value;
 
-        if (null === $this->options['charlist']) {
+        $charlist = $this->options['charlist'];
+
+        if ($charlist === null) {
             return $this->unicodeTrim($value);
         }
 
-        return $this->unicodeTrim($value, $this->options['charlist']);
+        return $this->unicodeTrim($value, $charlist);
     }
 
     /**

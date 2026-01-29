@@ -46,6 +46,7 @@ use function substr;
  *    useTldCheck?: bool,
  *    ipValidator?: null|ValidatorInterface,
  * }
+ * @final
  */
 class Hostname extends AbstractValidator
 {
@@ -182,7 +183,6 @@ class Hostname extends AbstractValidator
         'author',
         'auto',
         'autos',
-        'avianca',
         'aw',
         'aws',
         'ax',
@@ -193,7 +193,6 @@ class Hostname extends AbstractValidator
         'baby',
         'baidu',
         'banamex',
-        'bananarepublic',
         'band',
         'bank',
         'bar',
@@ -358,7 +357,6 @@ class Hostname extends AbstractValidator
         'college',
         'cologne',
         'com',
-        'comcast',
         'commbank',
         'community',
         'company',
@@ -476,7 +474,6 @@ class Hostname extends AbstractValidator
         'esq',
         'estate',
         'et',
-        'etisalat',
         'eu',
         'eurovision',
         'eus',
@@ -610,7 +607,6 @@ class Hostname extends AbstractValidator
         'gs',
         'gt',
         'gu',
-        'guardian',
         'gucci',
         'guge',
         'guide',
@@ -904,7 +900,6 @@ class Hostname extends AbstractValidator
         'nab',
         'nagoya',
         'name',
-        'natura',
         'navy',
         'nba',
         'nc',
@@ -953,7 +948,6 @@ class Hostname extends AbstractValidator
         'okinawa',
         'olayan',
         'olayangroup',
-        'oldnavy',
         'ollo',
         'om',
         'omega',
@@ -1114,7 +1108,6 @@ class Hostname extends AbstractValidator
         'sbi',
         'sbs',
         'sc',
-        'sca',
         'scb',
         'schaeffler',
         'schmidt',
@@ -1143,7 +1136,6 @@ class Hostname extends AbstractValidator
         'sh',
         'shangrila',
         'sharp',
-        'shaw',
         'shell',
         'shia',
         'shiksha',
@@ -1332,7 +1324,6 @@ class Hostname extends AbstractValidator
         'vlaanderen',
         'vn',
         'vodka',
-        'volkswagen',
         'volvo',
         'vote',
         'voting',
@@ -1376,7 +1367,6 @@ class Hostname extends AbstractValidator
         'wtf',
         'xbox',
         'xerox',
-        'xfinity',
         'xihuan',
         'xin',
         'कॉम',
@@ -1467,7 +1457,6 @@ class Hostname extends AbstractValidator
         'ارامكو',
         'ایران',
         'العليان',
-        'اتصالات',
         'امارات',
         'بازار',
         'موريتانيا',
@@ -1725,6 +1714,7 @@ class Hostname extends AbstractValidator
             3 => '/^[\x{002d}0-9a-zșț]{1,63}$/iu',
         ],
         'SJ'       => [1 => '/^[\x{002d}0-9a-zàáä-éêñ-ôöøüčđńŋšŧž]{1,63}$/iu'],
+        'SWISS'    => [1 => '/^[\x{002d}0-9a-zà-öø-ÿœ]{1,63}$/iu'],
         'TH'       => [1 => '/^[\x{002d}0-9a-z\x{0E01}-\x{0E3A}\x{0E40}-\x{0E4D}\x{0E50}-\x{0E59}]{1,63}$/iu'],
         'TM'       => [1 => '/^[\x{002d}0-9a-zà-öø-ÿāăąćĉċčďđēėęěĝġģĥħīįĵķĺļľŀłńņňŋőœŕŗřśŝşšţťŧūŭůűųŵŷźżž]{1,63}$/iu'],
         'TW'       => 'Hostname/Cn.php',
@@ -1843,6 +1833,8 @@ class Hostname extends AbstractValidator
     /**
      * Returns the set ip validator
      *
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
+     *
      * @return Ip
      */
     public function getIpValidator()
@@ -1851,6 +1843,8 @@ class Hostname extends AbstractValidator
     }
 
     /**
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
+     *
      * @param Ip $ipValidator OPTIONAL
      * @return self
      */
@@ -1867,6 +1861,8 @@ class Hostname extends AbstractValidator
     /**
      * Returns the allow option
      *
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
+     *
      * @return int
      */
     public function getAllow()
@@ -1877,7 +1873,9 @@ class Hostname extends AbstractValidator
     /**
      * Sets the allow option
      *
-     * @param  int $allow
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
+     *
+     * @param int $allow
      * @return $this Provides a fluent interface
      */
     public function setAllow($allow)
@@ -1888,6 +1886,8 @@ class Hostname extends AbstractValidator
 
     /**
      * Returns the set idn option
+     *
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
      *
      * @return bool
      */
@@ -1901,7 +1901,9 @@ class Hostname extends AbstractValidator
      *
      * This only applies when DNS hostnames are validated
      *
-     * @param  bool $useIdnCheck Set to true to validate IDN domains
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
+     *
+     * @param bool $useIdnCheck Set to true to validate IDN domains
      * @return $this
      */
     public function useIdnCheck($useIdnCheck)
@@ -1912,6 +1914,8 @@ class Hostname extends AbstractValidator
 
     /**
      * Returns the set tld option
+     *
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
      *
      * @return bool
      */
@@ -1925,7 +1929,9 @@ class Hostname extends AbstractValidator
      *
      * This only applies when DNS hostnames are validated
      *
-     * @param  bool $useTldCheck Set to true to validate TLD elements
+     * @deprecated Since 2.61.0 all options getters and setters will be removed in 3.0
+     *
+     * @param bool $useTldCheck Set to true to validate TLD elements
      * @return $this
      */
     public function useTldCheck($useTldCheck)
@@ -1962,14 +1968,6 @@ class Hostname extends AbstractValidator
             }
 
             return true;
-        }
-
-        // Handle Regex compilation failure that may happen on .biz domain with has @ character, eg: tapi4457@hsoqvf.biz
-        // Technically, hostname with '@' character is invalid, so mark as invalid immediately
-        // @see https://github.com/laminas/laminas-validator/issues/8
-        if (str_contains($value, '@')) {
-            $this->error(self::INVALID_HOSTNAME);
-            return false;
         }
 
         // Local hostnames are allowed to be partial (ending '.')
@@ -2214,8 +2212,12 @@ class Hostname extends AbstractValidator
         $index = 0;
         $char  = 0x80;
 
-        for ($indexe = $separator ? $separator + 1 : 0; $indexe < $lengthe; ++$lengthd) {
+        for ($indexe = $separator !== false ? $separator + 1 : 0; $indexe < $lengthe; ++$lengthd) {
             for ($oldIndex = $index, $pos = 1, $key = 36; 1; $key += 36) {
+                if (! isset($encoded[$indexe])) {
+                    break 2;
+                }
+
                 $hex   = ord($encoded[$indexe++]);
                 $digit = $hex - 48 < 10 ? $hex - 22
                        : ($hex - 65 < 26 ? $hex - 65

@@ -88,8 +88,6 @@ class Hostname implements RouteInterface
      * Create a new hostname route.
      *
      * @param  string $route
-     * @param  array  $constraints
-     * @param  array  $defaults
      */
     public function __construct($route, array $constraints = [], array $defaults = [])
     {
@@ -155,7 +153,7 @@ class Hostname implements RouteInterface
 
             $currentPos += strlen($matches[0]);
 
-            if (! empty($matches['literal'])) {
+            if (isset($matches['literal']) && $matches['literal'] !== '') {
                 $levelParts[$level][] = ['literal', $matches['literal']];
             }
 
@@ -207,7 +205,6 @@ class Hostname implements RouteInterface
      * Build the matching regex from parsed parts.
      *
      * @param Parts $parts
-     * @param array $constraints
      * @param int   $groupIndex
      * @return string
      * @throws Exception\RuntimeException
@@ -347,8 +344,6 @@ class Hostname implements RouteInterface
      *
      * @see    \Laminas\Router\RouteInterface::assemble()
      *
-     * @param  array $params
-     * @param  array $options
      * @return mixed
      */
     public function assemble(array $params = [], array $options = [])

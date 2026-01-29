@@ -20,6 +20,10 @@ use function str_contains;
 /**
  * Compression adapter for Bz2
  *
+ * @deprecated Since 2.40.0 Compression adapters will be split into multiple interfaces to clearly separate the
+ *             capability of the underlying compression or archive format. For example, tar cannot compress strings and
+ *             GZ cannot be used to create multi-file archives.
+ *
  * @psalm-type Options = array{
  *     blocksize?: int,
  *     archive?: string|null,
@@ -29,6 +33,8 @@ use function str_contains;
  */
 class Bz2 extends AbstractCompressionAlgorithm
 {
+    private const DEFAULT_BLOCK_SIZE = 4;
+
     /**
      * Compression Options
      * array(
@@ -39,7 +45,7 @@ class Bz2 extends AbstractCompressionAlgorithm
      * @var Options
      */
     protected $options = [
-        'blocksize' => 4,
+        'blocksize' => self::DEFAULT_BLOCK_SIZE,
         'archive'   => null,
     ];
 
@@ -62,7 +68,7 @@ class Bz2 extends AbstractCompressionAlgorithm
      */
     public function getBlocksize()
     {
-        return $this->options['blocksize'];
+        return $this->options['blocksize'] ?? self::DEFAULT_BLOCK_SIZE;
     }
 
     /**
@@ -114,7 +120,7 @@ class Bz2 extends AbstractCompressionAlgorithm
     public function compress($content)
     {
         $archive = $this->getArchive();
-        if (! empty($archive)) {
+        if ($archive !== null) {
             $file = bzopen($archive, 'w');
             if (! $file) {
                 throw new Exception\RuntimeException("Error opening the archive '" . $archive . "'");

@@ -8,8 +8,8 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
@@ -18,10 +18,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '53c7be3308b5aa229d03a4dfcf6ca18d' => __DIR__ . '/..' . '/symfony/intl/Resources/functions.php',
@@ -97,13 +97,13 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'b967176095820b122db026301435e5d4' => __DIR__ . '/..' . '/magento/module-inventory-in-store-pickup-api/registration.php',
         'ff4a42fb48f753f6d1e6177223059e3d' => __DIR__ . '/..' . '/magento/module-msrp/registration.php',
         'c7e1128e2a1afd8d28d3f93d8e2e3019' => __DIR__ . '/..' . '/magento/module-re-captcha-webapi-api/registration.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         'ce905cb44f14ec283a2ba1c12e6f8420' => __DIR__ . '/..' . '/magento/module-advanced-search/registration.php',
         '108fd301b720a30c9ec42a785ee00656' => __DIR__ . '/..' . '/magento/module-gift-message/registration.php',
         '1873ae6446634b40bf25026005067303' => __DIR__ . '/..' . '/magento/module-re-captcha-frontend-ui/registration.php',
         '24095738ccbb9fc915174b272ef16432' => __DIR__ . '/..' . '/magento/module-graph-ql-cache/registration.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'cf44f9b1253939f955772534aabbf624' => __DIR__ . '/..' . '/magento/module-grouped-product/registration.php',
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e4f13915c73bde5cfe1ad991a2c05d62' => __DIR__ . '/..' . '/magento/module-media-content-api/registration.php',
         '5fb4035ebd843bb3a9ee62f27ace3d84' => __DIR__ . '/..' . '/magento/module-login-as-customer-api/registration.php',
@@ -136,7 +136,9 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'feab3019e2726e0d070190c665c9ddb3' => __DIR__ . '/..' . '/magento/module-jwt-user-token/registration.php',
         'cbc36b0f2aa35736488fd0554815c52c' => __DIR__ . '/..' . '/magento/module-media-gallery-metadata-api/registration.php',
         '6269d4cdefebe2f0047a8b2c3cc65ecf' => __DIR__ . '/..' . '/magento/module-media-gallery-ui-api/registration.php',
+        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
         '8592c7b0947d8a0965a9e8c3d16f9c24' => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/autoload.php',
         '9d3c0cffdf7ae2ab7dc3179a4aeef794' => __DIR__ . '/..' . '/magento/module-checkout-agreements/registration.php',
@@ -154,7 +156,6 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'e9cc958f8b33818a88925f9b6ccf0f46' => __DIR__ . '/..' . '/magento/module-re-captcha-version-2-checkbox/registration.php',
         '5ee0a25967d14ddf280c7b18de12daf9' => __DIR__ . '/..' . '/magento/module-re-captcha-version-2-invisible/registration.php',
         'f837c6995454d7fc8c6285f0f03baa49' => __DIR__ . '/..' . '/magento/module-re-captcha-version-3-invisible/registration.php',
-        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '51fcf4e06c07cc00c920b44bcd900e7a' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/apc.php',
         '288267919fedd3829a7732b5fb202197' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/array.php',
         'a88cd08cfbf1600f7d5de6e587eee1fa' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/datetime.php',
@@ -243,11 +244,9 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         '4af1dca6db8c527c6eed27bff85ff0e5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/yaz.php',
         'fe43ca06499ac37bc2dedd823af71eb5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/zip.php',
         '356736db98a6834f0a886b8d509b0ecd' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/zlib.php',
-        '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
         '41e3c70b13a38be15b2f71a5ab57282e' => __DIR__ . '/..' . '/magento/module-cron/registration.php',
         '31f9d3fe7417744d87bcb77e698734fb' => __DIR__ . '/..' . '/magento/module-media-content-synchronization-api/registration.php',
         '7262a266e3433bc7d1f53ddcb1dab374' => __DIR__ . '/..' . '/magento/module-multishipping/registration.php',
-        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '5cf85b36784d8983386f13c5ce966b3f' => __DIR__ . '/..' . '/magento/module-cms-graph-ql/registration.php',
         '4a78493fd48e24e9ec5cd7b77605aa2f' => __DIR__ . '/..' . '/magento/module-developer/registration.php',
         'cd2159b9f3fc8d4bd4379be89ab8d44d' => __DIR__ . '/..' . '/magento/module-elasticsearch/registration.php',
@@ -265,6 +264,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         '3f7befdb3fd10d6e2a914b0320605b6e' => __DIR__ . '/..' . '/magento/module-bundle-import-export/registration.php',
         '2ddc4473bbdcd41a59f431c47412cae7' => __DIR__ . '/..' . '/magento/module-media-gallery/registration.php',
         '668a338ed27950eb02c3ab30da6a3530' => __DIR__ . '/..' . '/magento/module-media-gallery-ui/registration.php',
+        '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         '71bec2022ce7910b2a55f98bbf437063' => __DIR__ . '/..' . '/magento/framework-amqp/registration.php',
         '6e774d6c013c430185b2f190fca89228' => __DIR__ . '/..' . '/magento/module-downloadable-graph-ql/registration.php',
         'f0a367f3327072458afd08ec8891b227' => __DIR__ . '/..' . '/magento/module-google-analytics/registration.php',
@@ -525,16 +525,17 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php84\\' => 23,
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
-            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\HttpClient\\' => 29,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarExporter\\' => 30,
@@ -547,6 +548,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Symfony\\Component\\HttpClient\\' => 29,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
@@ -564,7 +566,13 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         ),
         'R' => 
         array (
+            'React\\Stream\\' => 13,
+            'React\\Socket\\' => 13,
             'React\\Promise\\' => 14,
+            'React\\EventLoop\\' => 16,
+            'React\\Dns\\' => 10,
+            'React\\ChildProcess\\' => 19,
+            'React\\Cache\\' => 12,
             'ReCaptcha\\' => 10,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
@@ -591,6 +599,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
             'Pelago\\Emogrifier\\' => 18,
             'PayPal\\Braintree\\' => 17,
             'PayPal\\BraintreeGraphQl\\' => 24,
+            'ParagonIE\\Sodium\\' => 17,
             'ParagonIE\\ConstantTime\\' => 23,
             'PDepend\\' => 8,
         ),
@@ -947,6 +956,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
             'Magento\\' => 8,
             'Magento2\\' => 9,
             'Magento2Framework\\' => 18,
+            'MabeEnum\\' => 9,
             'MFTF\\' => 5,
         ),
         'L' => 
@@ -954,10 +964,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\AwsS3V3\\' => 25,
             'League\\Flysystem\\' => 17,
-            'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\View\\' => 13,
             'Laminas\\Validator\\' => 18,
             'Laminas\\Uri\\' => 12,
+            'Laminas\\Translator\\' => 19,
             'Laminas\\Text\\' => 13,
             'Laminas\\Stdlib\\' => 15,
             'Laminas\\Soap\\' => 13,
@@ -993,18 +1003,8 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'J' => 
         array (
             'JsonSchema\\' => 11,
-            'Jose\\Component\\Signature\\Algorithm\\' => 35,
-            'Jose\\Component\\Signature\\' => 25,
-            'Jose\\Component\\NestedToken\\' => 27,
-            'Jose\\Component\\KeyManagement\\' => 29,
-            'Jose\\Component\\Encryption\\Algorithm\\KeyEncryption\\' => 50,
-            'Jose\\Component\\Encryption\\Algorithm\\ContentEncryption\\' => 54,
-            'Jose\\Component\\Encryption\\Algorithm\\' => 36,
-            'Jose\\Component\\Encryption\\' => 26,
-            'Jose\\Component\\Core\\Util\\Ecc\\' => 29,
-            'Jose\\Component\\Core\\' => 20,
-            'Jose\\Component\\Console\\' => 23,
-            'Jose\\Component\\Checker\\' => 23,
+            'Jose\\Experimental\\' => 18,
+            'Jose\\Component\\' => 15,
             'Jose\\Bundle\\JoseFramework\\' => 26,
             'Jose\\' => 5,
             'JmesPath\\' => 9,
@@ -1022,10 +1022,12 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         ),
         'F' => 
         array (
+            'Fidry\\CpuCoreCounter\\' => 21,
             'Facebook\\WebDriver\\' => 19,
         ),
         'E' => 
         array (
+            'Evenement\\' => 10,
             'Endroid\\QrCode\\' => 15,
             'Elasticsearch\\' => 14,
         ),
@@ -1051,12 +1053,14 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
             'Composer\\' => 9,
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
+            'Clue\\React\\NDJson\\' => 18,
         ),
         'B' => 
         array (
             'Brick\\VarExporter\\' => 18,
             'Brick\\Math\\' => 11,
             'Braintree\\' => 10,
+            'Behat\\Gherkin\\' => 14,
             'Base32\\' => 7,
             'BaconQrCode\\' => 12,
         ),
@@ -1098,6 +1102,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         array (
             0 => __DIR__ . '/..' . '/temando/module-shipping-remover',
         ),
+        'Symfony\\Polyfill\\Php84\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php84',
+        ),
         'Symfony\\Polyfill\\Php81\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
@@ -1109,10 +1117,6 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'Symfony\\Polyfill\\Php73\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
-        ),
-        'Symfony\\Polyfill\\Php72\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -1137,6 +1141,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client-contracts',
         ),
         'Symfony\\Contracts\\EventDispatcher\\' => 
         array (
@@ -1185,6 +1193,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Symfony\\Component\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client',
         ),
         'Symfony\\Component\\Finder\\' => 
         array (
@@ -1242,9 +1254,33 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         array (
             0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
         ),
+        'React\\Stream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/stream/src',
+        ),
+        'React\\Socket\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/socket/src',
+        ),
         'React\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
+        'React\\EventLoop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/event-loop/src',
+        ),
+        'React\\Dns\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/dns/src',
+        ),
+        'React\\ChildProcess\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/child-process/src',
+        ),
+        'React\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/cache/src',
         ),
         'ReCaptcha\\' => 
         array (
@@ -1276,12 +1312,12 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -1326,6 +1362,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'PayPal\\BraintreeGraphQl\\' => 
         array (
             0 => __DIR__ . '/..' . '/paypal/module-braintree-graph-ql',
+        ),
+        'ParagonIE\\Sodium\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/sodium_compat/namespaced',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (
@@ -2728,6 +2768,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         array (
             0 => __DIR__ . '/..' . '/magento/magento-coding-standard/Magento2Framework',
         ),
+        'MabeEnum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/marc-mabe/php-enum/src',
+        ),
         'MFTF\\' => 
         array (
             0 => __DIR__ . '/..' . '/magento/magento2-functional-testing-framework/dev/tests/functional/tests/MFTF',
@@ -2744,10 +2788,6 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
-        'Laminas\\ZendFrameworkBridge\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
-        ),
         'Laminas\\View\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-view/src',
@@ -2759,6 +2799,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'Laminas\\Uri\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-uri/src',
+        ),
+        'Laminas\\Translator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-translator/src',
         ),
         'Laminas\\Text\\' => 
         array (
@@ -2888,84 +2932,17 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         array (
             0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
-        'Jose\\Component\\Signature\\Algorithm\\' => 
+        'Jose\\Experimental\\' => 
         array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/ECDSA',
-            1 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/ECDSA',
-            2 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/EdDSA',
-            3 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/EdDSA',
-            4 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/Experimental',
-            5 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/Experimental',
-            6 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/HMAC',
-            7 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/HMAC',
-            8 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/None',
-            9 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/None',
-            10 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/RSA',
-            11 => __DIR__ . '/..' . '/web-token/jwt-framework/src/SignatureAlgorithm/RSA',
+            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Experimental',
         ),
-        'Jose\\Component\\Signature\\' => 
+        'Jose\\Component\\' => 
         array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/Signature',
-        ),
-        'Jose\\Component\\NestedToken\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/NestedToken',
-        ),
-        'Jose\\Component\\KeyManagement\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/KeyManagement',
-        ),
-        'Jose\\Component\\Encryption\\Algorithm\\KeyEncryption\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/AESGCMKW',
-            1 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/AESGCMKW',
-            2 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/AESKW',
-            3 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/AESKW',
-            4 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/Direct',
-            5 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/Direct',
-            6 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/ECDHES',
-            7 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/ECDHES',
-            8 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/PBES2',
-            9 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/PBES2',
-            10 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/RSA',
-            11 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/KeyEncryption/RSA',
-        ),
-        'Jose\\Component\\Encryption\\Algorithm\\ContentEncryption\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/ContentEncryption/AESCBC',
-            1 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/ContentEncryption/AESCBC',
-            2 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/ContentEncryption/AESGCM',
-            3 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/ContentEncryption/AESGCM',
-        ),
-        'Jose\\Component\\Encryption\\Algorithm\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/Experimental',
-            1 => __DIR__ . '/..' . '/web-token/jwt-framework/src/EncryptionAlgorithm/Experimental',
-        ),
-        'Jose\\Component\\Encryption\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/Encryption',
-        ),
-        'Jose\\Component\\Core\\Util\\Ecc\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Ecc',
-            1 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Ecc',
-        ),
-        'Jose\\Component\\Core\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/Core',
-        ),
-        'Jose\\Component\\Console\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/Console',
-        ),
-        'Jose\\Component\\Checker\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Component/Checker',
+            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Library',
         ),
         'Jose\\Bundle\\JoseFramework\\' => 
         array (
-            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Bundle/JoseFramework',
+            0 => __DIR__ . '/..' . '/web-token/jwt-framework/src/Bundle',
         ),
         'Jose\\' => 
         array (
@@ -3007,9 +2984,17 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         array (
             0 => __DIR__ . '/..' . '/webonyx/graphql-php/src',
         ),
+        'Fidry\\CpuCoreCounter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fidry/cpu-core-counter/src',
+        ),
         'Facebook\\WebDriver\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-webdriver/webdriver/lib',
+        ),
+        'Evenement\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/evenement/evenement/src',
         ),
         'Endroid\\QrCode\\' => 
         array (
@@ -3025,7 +3010,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         ),
         'Doctrine\\Deprecations\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/src',
         ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
@@ -3085,8 +3070,12 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
-            1 => __DIR__ . '/..' . '/codeception/stub/src',
+            0 => __DIR__ . '/..' . '/codeception/stub/src',
+            1 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+        ),
+        'Clue\\React\\NDJson\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clue/ndjson-react/src',
         ),
         'Brick\\VarExporter\\' => 
         array (
@@ -3099,6 +3088,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'Braintree\\' => 
         array (
             0 => __DIR__ . '/..' . '/braintree/braintree_php/lib/Braintree',
+        ),
+        'Behat\\Gherkin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/gherkin/src',
         ),
         'Base32\\' => 
         array (
@@ -3219,13 +3212,6 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
                 0 => __DIR__ . '/..' . '/2tvenom/cborencode/src',
             ),
         ),
-        'B' => 
-        array (
-            'Behat\\Gherkin' => 
-            array (
-                0 => __DIR__ . '/..' . '/behat/gherkin/src',
-            ),
-        ),
     );
 
     public static $fallbackDirsPsr0 = array (
@@ -3291,7 +3277,10 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'Credis_Module' => __DIR__ . '/..' . '/colinmollenhour/credis/Module.php',
         'Credis_Sentinel' => __DIR__ . '/..' . '/colinmollenhour/credis/Sentinel.php',
         'DG\\BypassFinals' => __DIR__ . '/..' . '/dg/bypass-finals/src/BypassFinals.php',
-        'DG\\NativeWrapper' => __DIR__ . '/..' . '/dg/bypass-finals/src/NativeWrapper.php',
+        'DG\\BypassFinals\\MutatingWrapper' => __DIR__ . '/..' . '/dg/bypass-finals/src/MutatingWrapper.php',
+        'DG\\BypassFinals\\NativeWrapper' => __DIR__ . '/..' . '/dg/bypass-finals/src/NativeWrapper.php',
+        'DG\\BypassFinals\\PHPUnitExtension' => __DIR__ . '/..' . '/dg/bypass-finals/src/PHPUnitExtension.php',
+        'Deprecated' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Deprecated.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Locale' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Locale.php',
@@ -3688,6 +3677,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'PharIo\\Manifest\\ManifestLoader' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestLoader.php',
         'PharIo\\Manifest\\ManifestLoaderException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/ManifestLoaderException.php',
         'PharIo\\Manifest\\ManifestSerializer' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestSerializer.php',
+        'PharIo\\Manifest\\NoEmailAddressException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/NoEmailAddressException.php',
         'PharIo\\Manifest\\PhpElement' => __DIR__ . '/..' . '/phar-io/manifest/src/xml/PhpElement.php',
         'PharIo\\Manifest\\PhpExtensionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpExtensionRequirement.php',
         'PharIo\\Manifest\\PhpVersionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpVersionRequirement.php',
@@ -3719,6 +3709,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'PharIo\\Version\\VersionConstraintValue' => __DIR__ . '/..' . '/phar-io/version/src/VersionConstraintValue.php',
         'PharIo\\Version\\VersionNumber' => __DIR__ . '/..' . '/phar-io/version/src/VersionNumber.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'ReflectionConstant' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
         'Safe\\DateTime' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/DateTime.php',
         'Safe\\DateTimeImmutable' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/DateTimeImmutable.php',
@@ -4022,7 +4013,7 @@ class ComposerStaticInit31e137add59e34cc8958c98f406e953f
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
-        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'Stringable' => __DIR__ . '/..' . '/marc-mabe/php-enum/stubs/Stringable.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',

@@ -16,6 +16,7 @@ use function count;
 use function get_debug_type;
 use function is_array;
 use function is_callable;
+use function is_string;
 use function sprintf;
 use function strtolower;
 
@@ -28,7 +29,7 @@ use function strtolower;
  *        priority?: int,
  *    }>,
  *    callbacks?: list<array{
- *        callback: callable(mixed): mixed,
+ *        callback: FilterInterface|callable(mixed): mixed,
  *        priority?: int,
  *    }>
  * }
@@ -39,6 +40,8 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
 {
     /**
      * Default priority at which filters are added
+     *
+     * @deprecated This constant will be moved to `FilterChainInterface` in version 3.0
      */
     public const DEFAULT_PRIORITY = 1000;
 
@@ -67,6 +70,9 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
     }
 
     /**
+     * @deprecated This method will be removed in 3.0.0 without replacement. Future versions of FilterChain will require
+     *             that all options are provided at construction time.
+     *
      * @param  FilterChainConfiguration|Traversable $options
      * @return $this
      * @throws Exception\InvalidArgumentException
@@ -86,7 +92,7 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
                     foreach ($value as $spec) {
                         $callback = $spec['callback'] ?? false;
                         $priority = $spec['priority'] ?? static::DEFAULT_PRIORITY;
-                        if ($callback) {
+                        if (is_callable($callback) || $callback instanceof FilterInterface) {
                             $this->attach($callback, $priority);
                         }
                     }
@@ -96,7 +102,7 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
                         $name     = $spec['name'] ?? false;
                         $options  = $spec['options'] ?? [];
                         $priority = $spec['priority'] ?? static::DEFAULT_PRIORITY;
-                        if ($name) {
+                        if (is_string($name) && $name !== '') {
                             $this->attachByName($name, $options, $priority);
                         }
                     }
@@ -124,6 +130,9 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
     /**
      * Get plugin manager instance
      *
+     * @deprecated This method will be removed in 3.0.0 without replacement. You should retrieve the plugin manager
+     *             instance from the dependency injection container in use.
+     *
      * @return FilterPluginManager
      */
     public function getPluginManager()
@@ -140,6 +149,9 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
     /**
      * Set plugin manager instance
      *
+     * @deprecated In version 3.0.0 FilterChain will require the plugin manager in its constructor. As such, this
+     *             method will be removed in 3.0.0 without replacement.
+     *
      * @return self
      */
     public function setPluginManager(FilterPluginManager $plugins)
@@ -150,6 +162,9 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
 
     /**
      * Retrieve a filter plugin by name
+     *
+     * @deprecated This method will be removed in 3.0.0 without replacement. To fetch instances of filters, you should
+     *             use the plugin manager directly.
      *
      * @param string $name
      * @return FilterInterface|callable(mixed): mixed
@@ -177,7 +192,7 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
                     get_debug_type($callback)
                 ));
             }
-            $callback = [$callback, 'filter'];
+            $callback = $callback->filter(...);
         }
         $this->filters->insert($callback, $priority);
         return $this;
@@ -221,6 +236,10 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
     /**
      * Get all the filters
      *
+     * @deprecated This method will be removed in 3.0.0 without replacement. It is superfluous considering that the
+     *             chain itself can be iterated to yield all composed filters, and the removal prevents unintended
+     *             external mutation of the composed chain.
+     *
      * @return PriorityQueue<FilterInterface|callable(mixed): mixed, int>
      */
     public function getFilters()
@@ -263,6 +282,8 @@ class FilterChain extends AbstractFilter implements Countable, IteratorAggregate
 
     /**
      * Prepare filter chain for serialization
+     *
+     * @deprecated This method will be removed in 3.0.0 without replacement
      *
      * Plugin manager (property 'plugins') cannot
      * be serialized. On wakeup the property remains unset

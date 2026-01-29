@@ -6,6 +6,7 @@ namespace Laminas\View\Helper;
 
 use Laminas\View\Exception;
 
+use function is_string;
 use function md5;
 use function method_exists;
 use function preg_match;
@@ -23,6 +24,8 @@ use const E_USER_DEPRECATED;
  * Helper for retrieving avatars from gravatar.com
  *
  * @deprecated This helper has been deprecated in favour of {@link GravatarImage} and will be removed in version 3.0
+ *
+ * @final
  */
 class Gravatar extends AbstractHtmlElement
 {
@@ -104,7 +107,7 @@ class Gravatar extends AbstractHtmlElement
      */
     public function __invoke($email = "", $options = [], $attributes = [])
     {
-        if (! empty($email)) {
+        if (is_string($email) && $email !== '') {
             $this->setEmail($email);
         }
         if (! empty($options)) {

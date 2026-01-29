@@ -9,9 +9,7 @@ use Traversable;
 
 use function func_get_args;
 use function get_debug_type;
-use function gettype;
 use function is_array;
-use function is_object;
 use function is_string;
 use function iterator_to_array;
 use function preg_match;
@@ -21,8 +19,8 @@ use function str_contains;
 
 /**
  * @psalm-type Options = array{
- *     pattern?: string|list<string>|null,
- *     replacement?: string|list<string>,
+ *     pattern: string|list<string>|null,
+ *     replacement: string|list<string>,
  * }
  * @extends AbstractFilter<Options>
  * @final
@@ -65,9 +63,11 @@ class PregReplace extends AbstractFilter
     /**
      * Set the regex pattern to search for
      *
+     * @deprecated Since 2.38.0 All option setters and getters will be removed in version 3.0
+     *
      * @see preg_replace()
      *
-     * @param  string|list<string> $pattern - same as the first argument of preg_replace
+     * @param string|list<string> $pattern - same as the first argument of preg_replace
      * @return self
      * @throws Exception\InvalidArgumentException
      */
@@ -77,7 +77,7 @@ class PregReplace extends AbstractFilter
             throw new Exception\InvalidArgumentException(sprintf(
                 '%s expects pattern to be array or string; received "%s"',
                 __METHOD__,
-                is_object($pattern) ? $pattern::class : gettype($pattern)
+                get_debug_type($pattern),
             ));
         }
 
@@ -98,6 +98,8 @@ class PregReplace extends AbstractFilter
     /**
      * Get currently set match pattern
      *
+     * @deprecated Since 2.38.0 All option setters and getters will be removed in version 3.0
+     *
      * @return string|list<string>|null
      */
     public function getPattern()
@@ -108,9 +110,11 @@ class PregReplace extends AbstractFilter
     /**
      * Set the replacement array/string
      *
+     * @deprecated Since 2.38.0 All option setters and getters will be removed in version 3.0
+     *
      * @see preg_replace()
      *
-     * @param  string|list<string> $replacement - same as the second argument of preg_replace
+     * @param string|list<string> $replacement - same as the second argument of preg_replace
      * @return self
      * @throws Exception\InvalidArgumentException
      */
@@ -129,6 +133,8 @@ class PregReplace extends AbstractFilter
 
     /**
      * Get currently set replacement value
+     *
+     * @deprecated Since 2.38.0 All option setters and getters will be removed in version 3.0
      *
      * @return string|list<string>
      */

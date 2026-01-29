@@ -18,7 +18,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "8.0.99"
+            "php": "8.1.99"
         },
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
@@ -28,16 +28,15 @@
     "extra": {
     },
     "require": {
-        "php": "~8.0.0 || ~8.1.0 || ~8.2.0",
+        "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
         "laminas/laminas-code": "^4.7.1",
-        "laminas/laminas-stdlib": "^3.3.1",
-        "laminas/laminas-zendframework-bridge": "^1.2.0"
+        "laminas/laminas-stdlib": "^3.3.1"
     },
     "require-dev": {
-        "laminas/laminas-coding-standard": "~2.4.0",
-        "phpunit/phpunit": "^9.5.5",
-        "psalm/plugin-phpunit": "^0.15.1",
-        "vimeo/psalm": "^4.6.4"
+        "laminas/laminas-coding-standard": "~3.0.1",
+        "phpunit/phpunit": "^10.5.38",
+        "psalm/plugin-phpunit": "^0.19.0",
+        "vimeo/psalm": "^5.26.1"
     },
     "autoload": {
         "psr-4": {
@@ -64,7 +63,7 @@
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     },
-    "replace": {
-        "zendframework/zend-server": "^2.8.1"
+    "conflict": {
+        "zendframework/zend-server": "*"
     }
 }

@@ -1,6 +1,50 @@
 Magento Functional Testing Framework Changelog
 ================================================
 
+4.3.12
+---------
+
+### Fixes
+* Allowed additional actions to read from credentials file to fix page builder failures.
+
+4.3.11
+---------
+### Enhancement
+* Provided support for chrome 131
+
+4.3.10
+---------
+
+### Fixes
+* Removed support for chrome 131
+
+4.3.9
+---------
+
+### Enhancement
+* Provided support for chrome 131
+
+4.3.8
+---------
+### Enhancements
+* Same as 4.3.7
+
+4.3.7
+---------
+### Enhancements
+* Same as 4.3.6
+
+4.3.6
+---------
+### Enhancements
+* Update All dependent symfony packages to >5.4 to overcome security vulnerability in MFTF version used by 2.4.6
+
+
+4.3.5
+---------
+### Fixes
+* Fixed ANSI Color codes getting appended to output of bin/magento command.
+
 4.3.4
 ---------
 ### Fixes

@@ -12,7 +12,7 @@ use React\Promise\PromiseInterface as ReactPromise;
  */
 class Promise
 {
-    /** @var SyncPromise|ReactPromise|AmpPromise<mixed> */
+    /** @var SyncPromise|ReactPromise<mixed>|AmpPromise<mixed> */
     public $adoptedPromise;
 
     private PromiseAdapter $adapter;
@@ -25,14 +25,15 @@ class Promise
     public function __construct($adoptedPromise, PromiseAdapter $adapter)
     {
         if ($adoptedPromise instanceof self) {
-            throw new InvariantViolation('Expecting promise from adapted system, got ' . self::class);
+            $selfClass = self::class;
+            throw new InvariantViolation("Expected promise from adapted system, got {$selfClass}.");
         }
 
         $this->adoptedPromise = $adoptedPromise;
         $this->adapter = $adapter;
     }
 
-    public function then(callable $onFulfilled = null, callable $onRejected = null): Promise
+    public function then(?callable $onFulfilled = null, ?callable $onRejected = null): Promise
     {
         return $this->adapter->then($this, $onFulfilled, $onRejected);
     }

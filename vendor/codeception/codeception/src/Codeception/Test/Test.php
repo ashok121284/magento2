@@ -10,8 +10,8 @@ use Codeception\Events;
 use Codeception\Exception\UselessTestException;
 use Codeception\PHPUnit\Wrapper\Test as TestWrapper;
 use Codeception\ResultAggregator;
-use Codeception\Test\Interfaces\ScenarioDriven;
 use Codeception\TestInterface;
+use LogicException;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Exception;
@@ -169,16 +169,7 @@ abstract class Test extends TestWrapper implements TestInterface, Interfaces\Des
                 $status = self::STATUS_OK;
                 $eventType = Events::TEST_SUCCESS;
 
-                if (method_exists($this, 'getScenario')) {
-                    foreach ($this->getScenario()?->getSteps() ?? [] as $step) {
-                        if ($step->hasFailed()) {
-                            $lastFailure = $result->popLastFailure();
-                            if ($lastFailure !== null) {
-                                throw $lastFailure->getFail();
-                            }
-                        }
-                    }
-                }
+                $this->checkConditionalAsserts($result);
             } catch (UselessTestException $e) {
                 $result->addUseless(new FailEvent($this, $e, $time));
                 $status = self::STATUS_USELESS;
@@ -195,11 +186,7 @@ abstract class Test extends TestWrapper implements TestInterface, Interfaces\Des
                 $result->addFailure(new FailEvent($this, $e, $time));
                 $status = self::STATUS_FAIL;
                 $eventType = Events::TEST_FAIL;
-            } catch (Exception $e) {
-                $result->addError(new FailEvent($this, $e, $time));
-                $status = self::STATUS_ERROR;
-                $eventType = Events::TEST_ERROR;
-            } catch (Throwable $e) {
+            } catch (Exception | Throwable $e) {
                 $result->addError(new FailEvent($this, $e, $time));
                 $status = self::STATUS_ERROR;
                 $eventType = Events::TEST_ERROR;
@@ -249,8 +236,8 @@ abstract class Test extends TestWrapper implements TestInterface, Interfaces\Des
 
     public function getResultAggregator(): ResultAggregator
     {
-        if ($this->resultAggregator === null) {
-            throw new \LogicException('ResultAggregator is not set');
+        if (!$this->resultAggregator instanceof ResultAggregator) {
+            throw new LogicException('ResultAggregator is not set');
         }
         return $this->resultAggregator;
     }
@@ -279,14 +266,12 @@ abstract class Test extends TestWrapper implements TestInterface, Interfaces\Des
 
     protected function fire(string $eventType, TestEvent $event): void
     {
-        if ($this->eventDispatcher === null) {
+        if (!$this->eventDispatcher instanceof EventDispatcher) {
             throw new RuntimeException('EventDispatcher must be injected before running test');
         }
         $test = $event->getTest();
-        if ($test instanceof TestInterface) {
-            foreach ($test->getMetadata()->getGroups() as $group) {
-                $this->eventDispatcher->dispatch($event, $eventType . '.' . $group);
-            }
+        foreach ($test->getMetadata()->getGroups() as $group) {
+            $this->eventDispatcher->dispatch($event, $eventType . '.' . $group);
         }
         $this->eventDispatcher->dispatch($event, $eventType);
     }
@@ -299,6 +284,29 @@ abstract class Test extends TestWrapper implements TestInterface, Interfaces\Des
             }
             if (method_exists($this, $hook . 'End')) {
                 $this->{$hook . 'End'}($status, $time, $e);
+            }
+        }
+    }
+
+    private function checkConditionalAsserts(ResultAggregator $result): void
+    {
+        if (!method_exists($this, 'getScenario')) {
+            return;
+        }
+
+        $lastFailure = $result->getLastFailure();
+        if (!$lastFailure instanceof FailEvent) {
+            return;
+        }
+
+        if (Descriptor::getTestSignatureUnique($lastFailure->getTest()) !== Descriptor::getTestSignatureUnique($this)) {
+            return;
+        }
+
+        foreach ($this->getScenario()?->getSteps() ?? [] as $step) {
+            if ($step->hasFailed()) {
+                $result->popLastFailure();
+                throw $lastFailure->getFail();
             }
         }
     }

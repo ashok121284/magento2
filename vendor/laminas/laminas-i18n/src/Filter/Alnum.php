@@ -73,8 +73,8 @@ class Alnum extends AbstractLocale
      *
      * Returns $value as string with all non-alphanumeric characters removed
      *
-     * @param  string|array $value
-     * @return string|array
+     * @param mixed $value
+     * @return string|list<string>|mixed
      */
     public function filter($value)
     {

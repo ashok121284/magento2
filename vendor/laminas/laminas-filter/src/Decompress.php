@@ -9,6 +9,9 @@ use function is_string;
 /**
  * Decompresses a given string
  *
+ * @deprecated Since 2.40.0. This filter will be removed in 3.0 and replaced with `DecompressString` and
+ *              `DecompressArchive`
+ *
  * @final
  */
 class Decompress extends Compress
@@ -18,8 +21,8 @@ class Decompress extends Compress
      *
      * Decompresses the content $value with the defined settings
      *
-     * @param  string $value Content to decompress
-     * @return string The decompressed content
+     * @param  mixed $value Content to decompress
+     * @return mixed|string The decompressed content
      */
     public function __invoke($value)
     {
@@ -31,8 +34,8 @@ class Decompress extends Compress
      *
      * Decompresses the content $value with the defined settings
      *
-     * @param  string $value Content to decompress
-     * @return string The decompressed content
+     * @param  mixed $value Content to decompress
+     * @return mixed|string The decompressed content
      */
     public function filter($value)
     {
