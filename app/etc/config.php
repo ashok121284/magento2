@@ -331,6 +331,8 @@ return [
         'Ak_CustomShipping' => 1,
         'Ak_ExtensionAttribute' => 1,
         'Ak_OrderGridExport' => 1,
+        'Mageplaza_Core' => 1,
+        'Mageplaza_Smtp' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1

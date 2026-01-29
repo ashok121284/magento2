@@ -22,4 +22,13 @@ class Interceptor extends \Magento\Customer\Model\AccountManagementApi implement
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'initiatePasswordReset');
         return $pluginInfo ? $this->___callPlugins('initiatePasswordReset', func_get_args(), $pluginInfo) : parent::initiatePasswordReset($email, $template, $websiteId);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isEmailAvailable($customerEmail, $websiteId = null)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'isEmailAvailable');
+        return $pluginInfo ? $this->___callPlugins('isEmailAvailable', func_get_args(), $pluginInfo) : parent::isEmailAvailable($customerEmail, $websiteId);
+    }
 }

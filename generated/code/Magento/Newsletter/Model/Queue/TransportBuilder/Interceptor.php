@@ -17,6 +17,24 @@ class Interceptor extends \Magento\Newsletter\Model\Queue\TransportBuilder imple
     /**
      * {@inheritdoc}
      */
+    public function setFrom($from)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'setFrom');
+        return $pluginInfo ? $this->___callPlugins('setFrom', func_get_args(), $pluginInfo) : parent::setFrom($from);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setTemplateOptions($templateOptions)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'setTemplateOptions');
+        return $pluginInfo ? $this->___callPlugins('setTemplateOptions', func_get_args(), $pluginInfo) : parent::setTemplateOptions($templateOptions);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getTransport()
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getTransport');
