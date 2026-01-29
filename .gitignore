@@ -1,3 +1,4 @@
 pub/
 var/
 generated/
+composer.lock

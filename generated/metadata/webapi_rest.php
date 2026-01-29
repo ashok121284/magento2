@@ -106234,12 +106234,6 @@ Line: %line%
       array (
         '_vn_' => true,
       ),
-      'unaliasedPath' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
     ),
     'Magento\\Framework\\GraphQl\\Schema\\Type\\ResolveInfoFactory' => 
     array (

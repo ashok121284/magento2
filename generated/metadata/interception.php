@@ -247,7 +247,6 @@
   'Laminas\\Code\\Generator\\MethodGenerator' => false,
   'Laminas\\Code\\Generator\\TraitUsageInterface' => false,
   'Laminas\\Escaper\\Escaper' => false,
-  'Laminas\\Escaper\\EscaperInterface' => false,
   'Laminas\\File\\Transfer\\Adapter\\AbstractAdapter' => false,
   'Laminas\\File\\Transfer\\Adapter\\Http' => false,
   'Laminas\\Filter\\AbstractFilter' => false,

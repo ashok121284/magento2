@@ -4704,20 +4704,3 @@ Did you mean one of these?
 [2026-01-27T19:19:54.389398+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
 [2026-01-27T19:19:54.389887+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
 [2026-01-27T19:19:54.390409+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
-[2026-01-29T20:38:47.517667+00:00] main.ERROR: NOTE: Manual static content deployment is not required in "default" and "developer" modes.
-In "default" and "developer" modes static contents are being deployed automatically on demand.
-If you still want to deploy in these modes, use -f option: 'bin/magento setup:static-content:deploy -f'
-#0 /var/www/html/magento2/setup/src/Magento/Setup/Console/Command/DeployStaticContentCommand.php(112): Magento\Setup\Console\Command\DeployStaticContentCommand->checkAppMode()
-#1 /var/www/html/magento2/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\DeployStaticContentCommand->execute()
-#2 /var/www/html/magento2/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run()
-#3 /var/www/html/magento2/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand()
-#4 /var/www/html/magento2/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun()
-#5 /var/www/html/magento2/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun()
-#6 /var/www/html/magento2/bin/magento(23): Symfony\Component\Console\Application->run()
-#7 {main} [] []
-[2026-01-29T20:39:05.726958+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
-[2026-01-29T20:39:05.727623+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
-[2026-01-29T20:39:05.728252+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
-[2026-01-29T20:39:05.728832+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
-[2026-01-29T20:39:05.729309+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
-[2026-01-29T20:39:05.729791+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
