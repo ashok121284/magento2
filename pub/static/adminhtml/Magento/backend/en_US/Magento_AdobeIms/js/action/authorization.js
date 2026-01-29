@@ -1,1 +1,0 @@
-/var/www/html/magento2/vendor/magento/module-adobe-ims/view/adminhtml/web/js/action/authorization.js

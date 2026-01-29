@@ -2642,8 +2642,6 @@
           'retriable_operation_listing_data_source' => 'Magento\\AsynchronousOperations\\Ui\\Component\\DataProvider\\Operation\\Retriable\\SearchResult',
           'failed_operation_modal_listing_data_source' => 'Magento\\AsynchronousOperations\\Ui\\Component\\DataProvider\\Operation\\Failed\\SearchResult',
           'retriable_operation_modal_listing_data_source' => 'Magento\\AsynchronousOperations\\Ui\\Component\\DataProvider\\Operation\\Retriable\\SearchResult',
-          'mpsmtp_emails_log_grid_data_source' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Grid\\Collection',
-          'mpsmtp_abandoned_cart_grid_data_source' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\AbandonedCart\\Grid\\Collection',
           'braintree_report_data_source' => 'PayPal\\Braintree\\Model\\Report\\TransactionsCollection',
         ),
       ),
@@ -9563,7 +9561,7 @@
     array (
       'config' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'integrationService' => 
       array (
@@ -16773,7 +16771,7 @@
         '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
       ),
     ),
-    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Add\\Interceptor' => 
+    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Add' => 
     array (
       'data' => 
       array (
@@ -16782,7 +16780,7 @@
         ),
       ),
     ),
-    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Remove\\Interceptor' => 
+    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Remove' => 
     array (
       'data' => 
       array (
@@ -16791,7 +16789,7 @@
         ),
       ),
     ),
-    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Update\\Interceptor' => 
+    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Update' => 
     array (
       'data' => 
       array (
@@ -24132,14 +24130,14 @@ Line: %line%
       ),
       'searchCriteriaBuilder' => 
       array (
-        '_i_' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder\\Interceptor',
+        '_i_' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder',
       ),
       'catalogProductVisibility' => 
       array (
         '_i_' => 'Magento\\Catalog\\Model\\Product\\Visibility',
       ),
     ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder\\Interceptor' => 
+    'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder' => 
     array (
       'searchCriteriaFactory' => 
       array (
@@ -61681,7 +61679,7 @@ Line: %line%
       ),
       'backendConfig' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'resultPageFactory' => 
       array (
@@ -61704,7 +61702,7 @@ Line: %line%
       ),
       'backendConfig' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'resultForwardFactory' => 
       array (
@@ -61754,11 +61752,64 @@ Line: %line%
       ),
       'backendConfig' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'resultRawFactory' => 
       array (
         '_i_' => 'Magento\\Framework\\Controller\\Result\\RawFactory',
+      ),
+    ),
+    'Magento\\Config\\Model\\Config' => 
+    array (
+      'config' => 
+      array (
+        '_i_' => 'Magento\\Framework\\App\\ReinitableConfig',
+      ),
+      'eventManager' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Event\\Manager\\Proxy',
+      ),
+      'configStructure' => 
+      array (
+        '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Proxy',
+      ),
+      'transactionFactory' => 
+      array (
+        '_i_' => 'Magento\\Framework\\DB\\TransactionFactory',
+      ),
+      'configLoader' => 
+      array (
+        '_i_' => 'Magento\\Config\\Model\\Config\\Loader',
+      ),
+      'configValueFactory' => 
+      array (
+        '_i_' => 'Magento\\Framework\\App\\Config\\ValueFactory',
+      ),
+      'storeManager' => 
+      array (
+        '_i_' => 'Magento\\Store\\Model\\StoreManager',
+      ),
+      'settingChecker' => 
+      array (
+        '_vn_' => true,
+      ),
+      'data' => 
+      array (
+        '_v_' => 
+        array (
+        ),
+      ),
+      'scopeResolverPool' => 
+      array (
+        '_vn_' => true,
+      ),
+      'scopeTypeNormalizer' => 
+      array (
+        '_vn_' => true,
+      ),
+      'pillPut' => 
+      array (
+        '_vn_' => true,
       ),
     ),
     'Magento\\Config\\Model\\Config\\BackendClone\\Factory' => 
@@ -63162,59 +63213,6 @@ Line: %line%
         '_i_' => 'Magento\\Framework\\App\\Config',
       ),
     ),
-    'Magento\\Config\\Model\\Config\\Interceptor' => 
-    array (
-      'config' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\ReinitableConfig',
-      ),
-      'eventManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Event\\Manager\\Proxy',
-      ),
-      'configStructure' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Proxy',
-      ),
-      'transactionFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\DB\\TransactionFactory',
-      ),
-      'configLoader' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Loader',
-      ),
-      'configValueFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Config\\ValueFactory',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'settingChecker' => 
-      array (
-        '_vn_' => true,
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'scopeResolverPool' => 
-      array (
-        '_vn_' => true,
-      ),
-      'scopeTypeNormalizer' => 
-      array (
-        '_vn_' => true,
-      ),
-      'pillPut' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
     'Magento\\Config\\Model\\Config\\Loader' => 
     array (
       'configValueFactory' => 
@@ -63340,7 +63338,7 @@ Line: %line%
       ),
       'emailConfig' => 
       array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config',
       ),
       'data' => 
       array (
@@ -63478,7 +63476,7 @@ Line: %line%
     array (
       'structureData' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Data\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Data',
       ),
       'tabIterator' => 
       array (
@@ -63513,7 +63511,7 @@ Line: %line%
         '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Mapper\\Factory',
       ),
     ),
-    'Magento\\Config\\Model\\Config\\Structure\\Data\\Interceptor' => 
+    'Magento\\Config\\Model\\Config\\Structure\\Data' => 
     array (
       'reader' => 
       array (
@@ -63778,7 +63776,7 @@ Line: %line%
     array (
       'structureData' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Data\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config\\Structure\\Data',
       ),
       'tabIterator' => 
       array (
@@ -77123,7 +77121,7 @@ Line: %line%
     array (
       'config' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'groupRepository' => 
       array (
@@ -80111,17 +80109,6 @@ Line: %line%
       'connectionName' => 
       array (
         '_vn_' => true,
-      ),
-    ),
-    'Magento\\Customer\\Model\\SessionFactory' => 
-    array (
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'instanceName' => 
-      array (
-        '_v_' => '\\Magento\\Customer\\Model\\Session',
       ),
     ),
     'Magento\\Customer\\Model\\Session\\Interceptor' => 
@@ -92927,7 +92914,7 @@ Line: %line%
       ),
       'emailConfig' => 
       array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config',
       ),
       'jsonHelper' => 
       array (
@@ -93101,7 +93088,7 @@ Line: %line%
       ),
       'emailConfig' => 
       array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config',
       ),
       'serializer' => 
       array (
@@ -93244,7 +93231,7 @@ Line: %line%
       ),
       'emailConfig' => 
       array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config',
       ),
       'templateFactory' => 
       array (
@@ -93416,6 +93403,29 @@ Line: %line%
         '_v_' => '\\Magento\\Email\\Model\\Template',
       ),
     ),
+    'Magento\\Email\\Model\\Template\\Config' => 
+    array (
+      'dataStorage' => 
+      array (
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Data',
+      ),
+      'moduleReader' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Module\\Dir\\Reader',
+      ),
+      'viewFileSystem' => 
+      array (
+        '_i_' => 'Magento\\Framework\\View\\FileSystem',
+      ),
+      'themePackages' => 
+      array (
+        '_i_' => 'Magento\\Framework\\View\\Design\\Theme\\ThemePackageList',
+      ),
+      'readDirFactory' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Filesystem\\Directory\\ReadFactory',
+      ),
+    ),
     'Magento\\Email\\Model\\Template\\Config\\Converter' => NULL,
     'Magento\\Email\\Model\\Template\\Config\\Data' => 
     array (
@@ -93460,29 +93470,6 @@ Line: %line%
       'dirSearch' => 
       array (
         '_i_' => 'Magento\\Framework\\Component\\DirSearch',
-      ),
-    ),
-    'Magento\\Email\\Model\\Template\\Config\\Interceptor' => 
-    array (
-      'dataStorage' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Data',
-      ),
-      'moduleReader' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Module\\Dir\\Reader',
-      ),
-      'viewFileSystem' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\FileSystem',
-      ),
-      'themePackages' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Design\\Theme\\ThemePackageList',
-      ),
-      'readDirFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Filesystem\\Directory\\ReadFactory',
       ),
     ),
     'Magento\\Email\\Model\\Template\\Config\\Reader' => 
@@ -93686,7 +93673,7 @@ Line: %line%
       ),
       'emailConfig' => 
       array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config',
       ),
       'templateFactory' => 
       array (
@@ -108182,7 +108169,7 @@ Line: %line%
         '_v_' => 'Magento\\Framework\\Mail\\TemplateInterface',
       ),
     ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore\\Interceptor' => 
+    'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore' => 
     array (
       'message' => 
       array (
@@ -119229,8 +119216,6 @@ Line: %line%
           'retriable_operation_listing_data_source' => 'Magento\\AsynchronousOperations\\Ui\\Component\\DataProvider\\Operation\\Retriable\\SearchResult',
           'failed_operation_modal_listing_data_source' => 'Magento\\AsynchronousOperations\\Ui\\Component\\DataProvider\\Operation\\Failed\\SearchResult',
           'retriable_operation_modal_listing_data_source' => 'Magento\\AsynchronousOperations\\Ui\\Component\\DataProvider\\Operation\\Retriable\\SearchResult',
-          'mpsmtp_emails_log_grid_data_source' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Grid\\Collection',
-          'mpsmtp_abandoned_cart_grid_data_source' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\AbandonedCart\\Grid\\Collection',
         ),
       ),
     ),
@@ -154438,7 +154423,7 @@ Line: %line%
       ),
       'emailConfig' => 
       array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
+        '_i_' => 'Magento\\Email\\Model\\Template\\Config',
       ),
       'templateFactory' => 
       array (
@@ -161365,7 +161350,7 @@ Line: %line%
       ),
       'backendConfig' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'data' => 
       array (
@@ -164724,7 +164709,7 @@ Line: %line%
       ),
       'backendConfig' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'scopeDefiner' => 
       array (
@@ -236377,1843 +236362,6 @@ Line: %line%
         '_i_' => 'Magento\\Wishlist\\Helper\\Data',
       ),
     ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\ProcessBar' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\Renderer\\Image' => 
-    array (
-      'factoryElement' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Form\\Element\\Factory',
-      ),
-      'factoryCollection' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Form\\Element\\CollectionFactory',
-      ),
-      'escaper' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Escaper',
-      ),
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-      'random' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\Button' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\Validate',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\ColorPicker' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\Compatibility' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\Docs' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\Validate',
-      ),
-      'packageInfoFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Module\\PackageInfoFactory',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\Form\\Field\\Version' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'packageInfoFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Module\\PackageInfoFactory',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\Head' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Adminhtml\\System\\Config\\Message' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Core\\Block\\Hyva\\AddJsCss' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\Template\\Context',
-      ),
-      'fileIo' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Filesystem\\Io\\File',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Controller\\Adminhtml\\Index\\Activate\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'resourceConfig' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\ResourceModel\\Config',
-      ),
-      'config' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\ReinitableConfig',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\Validate',
-      ),
-      'activateFactory' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Model\\ActivateFactory',
-      ),
-    ),
-    'Mageplaza\\Core\\Controller\\Adminhtml\\Index\\Userguide\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-    ),
-    'Mageplaza\\Core\\Cron\\GetUpdate' => 
-    array (
-      'helperValidate' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\Validate',
-      ),
-      'componentRegistrar' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Component\\ComponentRegistrar',
-      ),
-      'readFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Filesystem\\Directory\\ReadFactory',
-      ),
-      'curlFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Client\\CurlFactory',
-      ),
-      'notifierPool' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Notification\\NotifierPool',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Core\\Cron\\ProcessFeed' => 
-    array (
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\AbstractData',
-      ),
-    ),
-    'Mageplaza\\Core\\Helper\\AbstractData' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Helper\\Context',
-      ),
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-    ),
-    'Mageplaza\\Core\\Helper\\Media' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Helper\\Context',
-      ),
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'filesystem' => 
-      array (
-        '_i_' => 'customRemoteFilesystem',
-      ),
-      'uploaderFactory' => 
-      array (
-        '_i_' => 'Magento\\MediaStorage\\Model\\File\\UploaderFactory',
-      ),
-      'imageFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Image\\AdapterFactory',
-      ),
-    ),
-    'Mageplaza\\Core\\Helper\\Validate' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Helper\\Context',
-      ),
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'moduleList' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Module\\ModuleList',
-      ),
-    ),
-    'Mageplaza\\Core\\Model\\Activate' => 
-    array (
-      'curlFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Adapter\\CurlFactory',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Model\\ActivateFactory' => 
-    array (
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'instanceName' => 
-      array (
-        '_v_' => '\\Mageplaza\\Core\\Model\\Activate',
-      ),
-    ),
-    'Mageplaza\\Core\\Model\\Config\\Backend\\Menu\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Model\\Context',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'config' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Config',
-      ),
-      'cacheTypeList' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Cache\\TypeList',
-      ),
-      'resource' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\ResourceModel\\Config\\Data',
-      ),
-      'resourceCollection' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\ResourceModel\\Config\\Data\\Collection\\Proxy',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Core\\Model\\Config\\Source\\NoticeType' => NULL,
-    'Mageplaza\\Core\\Model\\Config\\Structure\\Data' => 
-    array (
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\Validate',
-      ),
-    ),
-    'Mageplaza\\Core\\Model\\Feed' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Model\\Context',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'backendConfig' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Config',
-      ),
-      'inboxFactory' => 
-      array (
-        '_i_' => 'Magento\\AdminNotification\\Model\\InboxFactory',
-      ),
-      'curlFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Adapter\\CurlFactory',
-      ),
-      'deploymentConfig' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\DeploymentConfig',
-      ),
-      'productMetadata' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\ProductMetadata',
-      ),
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-      'resource' => 
-      array (
-        '_vn_' => true,
-      ),
-      'resourceCollection' => 
-      array (
-        '_vn_' => true,
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'escaper' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\BrowserEvent' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Children' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Conversation' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Emit' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Error' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Event' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\FlashMessage' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Method' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\QueryString' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Redirect' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\Resolver' => NULL,
-    'Mageplaza\\Core\\Model\\Magewire\\Concern\\View' => NULL,
-    'Mageplaza\\Core\\Model\\Message\\Validate' => 
-    array (
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\Validate',
-      ),
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-    ),
-    'Mageplaza\\Core\\Plugin\\MoveMenu' => 
-    array (
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Core\\Helper\\AbstractData',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\AbandonedCart' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Block\\Product\\Context',
-      ),
-      'productRepository' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Model\\ProductRepository\\Interceptor',
-      ),
-      'priceCurrency' => 
-      array (
-        '_i_' => 'Magento\\Directory\\Model\\PriceCurrency',
-      ),
-      'quoteFactory' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteFactory',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\AbandonedCart\\Edit' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Widget\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\AbandonedCart\\Edit\\Form\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'formFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\FormFactory',
-      ),
-      'addressConfig' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\Address\\Config',
-      ),
-      'priceCurrency' => 
-      array (
-        '_i_' => 'Magento\\Directory\\Model\\PriceCurrency',
-      ),
-      'emailIdentity' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Source\\Email\\Identity',
-      ),
-      'emailTemplate' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Source\\Email\\Template',
-      ),
-      'taxConfig' => 
-      array (
-        '_i_' => 'Magento\\Tax\\Model\\Config',
-      ),
-      'logCollectionFactory' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\CollectionFactory',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'groupRepository' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\ResourceModel\\GroupRepository\\Interceptor',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\Log\\ClearButton' => 
-    array (
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\System\\Config\\Button' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\System\\Config\\DatePicker' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\System\\Config\\Host' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\System\\Config\\Sync' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\System\\Config\\TestConnection' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\Block\\Template\\Context',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'secureRenderer' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Block\\Script' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Block\\Product\\Context',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'checkoutSession' => 
-      array (
-        '_i_' => 'Magento\\Checkout\\Model\\Session\\Interceptor',
-      ),
-      'customerSession' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\SessionFactory',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'httpContext' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Http\\Context\\Interceptor',
-      ),
-      'taxHelper' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Helper\\Data',
-      ),
-      'priceCurrency' => 
-      array (
-        '_i_' => 'Magento\\Directory\\Model\\PriceCurrency',
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\AbandonedCart\\Recover\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Action\\Context',
-      ),
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'quoteCollection' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\ResourceModel\\Quote\\Collection\\Interceptor',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'customerSession' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\Session\\Interceptor',
-      ),
-      'checkoutSession' => 
-      array (
-        '_i_' => 'Magento\\Checkout\\Model\\Session\\Interceptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'resultPageFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Result\\PageFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Preview\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'templateFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Mail\\Template\\Factory',
-      ),
-      'senderResolver' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\SenderResolver',
-      ),
-      'quoteFactory' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Send\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'quoteRepository' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteRepository\\Interceptor',
-      ),
-      'areaList' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\AreaList',
-      ),
-      'emailTemplate' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\Interceptor',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'senderResolver' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\SenderResolver',
-      ),
-      'transportBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Mail\\Template\\TransportBuilder\\Interceptor',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\View\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'resultPageFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Result\\PageFactory',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'quoteRepository' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteRepository\\Interceptor',
-      ),
-      'random' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Math\\Random',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Clear\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'collectionLog' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\CollectionFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Delete\\Interceptor' => 
-    array (
-      'logFactory' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\LogFactory',
-      ),
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Email\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'logFactory' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\LogFactory',
-      ),
-      'inlineTranslation' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Translate\\Inline\\State',
-      ),
-      'scopeConfig' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Config',
-      ),
-      'transportBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Mail\\Template\\TransportBuilder\\Interceptor',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Log\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'resultPageFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Result\\PageFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Marketing\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\MassDelete\\Interceptor' => 
-    array (
-      'filter' => 
-      array (
-        '_i_' => 'Magento\\Ui\\Component\\MassAction\\Filter',
-      ),
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'emailLog' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\CollectionFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\MassResend\\Interceptor' => 
-    array (
-      'filter' => 
-      array (
-        '_i_' => 'Magento\\Ui\\Component\\MassAction\\Filter',
-      ),
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'emailLog' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\CollectionFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Sync\\Estimate\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'emailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'customerCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\ResourceModel\\Customer\\CollectionFactory',
-      ),
-      'orderCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\ResourceModel\\Order\\CollectionFactory',
-      ),
-      'subscriberCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Newsletter\\Model\\ResourceModel\\Subscriber\\CollectionFactory',
-      ),
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Sync\\Sync\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'customerCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\ResourceModel\\Customer\\CollectionFactory',
-      ),
-      'orderCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\ResourceModel\\Order\\CollectionFactory',
-      ),
-      'subscriberCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Newsletter\\Model\\ResourceModel\\Subscriber\\CollectionFactory',
-      ),
-      'localeDate' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Stdlib\\DateTime\\Timezone',
-      ),
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\TestConnection\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'modelConfig' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\ResourceModel\\Config',
-      ),
-      'encryptor' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Encryption\\Encryptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Test\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Backend\\App\\Action\\Context',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'smtpDataHelper' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'mailResource' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Mail\\Rse\\Mail',
-      ),
-      'transportBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Mail\\Template\\TransportBuilder\\Interceptor',
-      ),
-      'senderResolver' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\SenderResolver',
-      ),
-      'encryptor' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Encryption\\Encryptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Controller\\Proxy\\Index\\Interceptor' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Action\\Context',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'resultRawFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Controller\\Result\\RawFactory',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Cron\\ClearLog' => 
-    array (
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'date' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Stdlib\\DateTime\\DateTime',
-      ),
-      'collectionLog' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\CollectionFactory',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Helper\\Data' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Helper\\Context',
-      ),
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'curl' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Client\\Curl',
-      ),
-      'cache' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Cache\\Proxy',
-      ),
-      'json' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Serialize\\Serializer\\Json',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Helper\\EmailMarketing' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Helper\\Context',
-      ),
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'curl' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Client\\Curl',
-      ),
-      'cache' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Cache\\Proxy',
-      ),
-      'json' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Serialize\\Serializer\\Json',
-      ),
-      'frontendUrl' => 
-      array (
-        '_ins_' => 'Magento\\Framework\\Url',
-      ),
-      'escaper' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Escaper',
-      ),
-      'catalogConfiguration' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Helper\\Product\\Configuration\\Interceptor',
-      ),
-      'bundleProductConfiguration' => 
-      array (
-        '_i_' => 'Magento\\Bundle\\Helper\\Catalog\\Product\\Configuration',
-      ),
-      'catalogHelper' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Helper\\Data',
-      ),
-      'encryptor' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Encryption\\Encryptor',
-      ),
-      'curlFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Client\\CurlFactory',
-      ),
-      'productRepository' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Model\\ProductRepository\\Interceptor',
-      ),
-      'resourceQuote' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\ResourceModel\\Quote',
-      ),
-      'shippingHelper' => 
-      array (
-        '_i_' => 'Magento\\Shipping\\Helper\\Data',
-      ),
-      'customerAttribute' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\Attribute',
-      ),
-      'orderCollection' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\ResourceModel\\Order\\Collection\\Interceptor',
-      ),
-      'reportCollectionFactory' => 
-      array (
-        '_i_' => 'Magento\\Reports\\Model\\ResourceModel\\Order\\CollectionFactory',
-      ),
-      'customerFactory' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\CustomerFactory',
-      ),
-      'subscriberFactory' => 
-      array (
-        '_i_' => 'Magento\\Newsletter\\Model\\SubscriberFactory',
-      ),
-      'groupFactory' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\GroupFactory',
-      ),
-      'orderConfig' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\Order\\Config',
-      ),
-      'localeDate' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Stdlib\\DateTime\\Timezone',
-      ),
-      'addressConfig' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\Address\\Config',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'storeInfo' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\Information',
-      ),
-      'storeFactory' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreFactory',
-      ),
-      'countryFactory' => 
-      array (
-        '_i_' => 'Magento\\Directory\\Model\\CountryFactory',
-      ),
-      'resourceConnection' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\ResourceConnection\\Interceptor',
-      ),
-      'region' => 
-      array (
-        '_i_' => 'Magento\\Directory\\Model\\Region',
-      ),
-      'abandonedCartCollection' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\AbandonedCart\\Grid\\Collection\\Interceptor',
-      ),
-      'quoteItemFactory' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\Quote\\ItemFactory',
-      ),
-      'componentRegistrar' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Component\\ComponentRegistrar',
-      ),
-      'readFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Filesystem\\Directory\\ReadFactory',
-      ),
-      'categoryFactory' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Model\\CategoryFactory',
-      ),
-      'configurable' => 
-      array (
-        '_i_' => 'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable\\Interceptor',
-      ),
-      'grouped' => 
-      array (
-        '_i_' => 'Magento\\GroupedProduct\\Model\\Product\\Type\\Grouped\\Interceptor',
-      ),
-      'bundle' => 
-      array (
-        '_i_' => 'Magento\\Bundle\\Model\\Product\\Type\\Interceptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Helper\\GraphMailer' => 
-    array (
-      'curl' => 
-      array (
-        '_i_' => 'Magento\\Framework\\HTTP\\Client\\Curl',
-      ),
-      'json' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Serialize\\Serializer\\Json',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Mail\\Rse\\Mail' => 
-    array (
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Mail\\Template\\TransportBuilder' => 
-    array (
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'resourceMail' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Mail\\Rse\\Mail',
-      ),
-      'SenderResolver' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\SenderResolver',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Mail\\Transport' => 
-    array (
-      'resourceMail' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Mail\\Rse\\Mail',
-      ),
-      'logFactory' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Model\\LogFactory',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'graphMailer' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\GraphMailer',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\CheckoutManagement' => 
-    array (
-      'quoteIdMaskFactory' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteIdMaskFactory',
-      ),
-      'cartRepository' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteRepository\\Interceptor',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\Config\\Source\\Authentication' => NULL,
-    'Mageplaza\\Smtp\\Model\\Config\\Source\\DaysRange' => NULL,
-    'Mageplaza\\Smtp\\Model\\Config\\Source\\Newsletter' => NULL,
-    'Mageplaza\\Smtp\\Model\\Config\\Source\\Protocol' => NULL,
-    'Mageplaza\\Smtp\\Model\\Config\\Source\\SyncOptions' => NULL,
-    'Mageplaza\\Smtp\\Model\\Config\\Source\\SyncType' => NULL,
-    'Mageplaza\\Smtp\\Model\\Log' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Model\\Context',
-      ),
-      'registry' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Registry',
-      ),
-      'transportBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Mail\\Template\\TransportBuilder\\Interceptor',
-      ),
-      'mailResource' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Mail\\Rse\\Mail',
-      ),
-      'helper' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'resource' => 
-      array (
-        '_vn_' => true,
-      ),
-      'resourceCollection' => 
-      array (
-        '_vn_' => true,
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\LogFactory' => 
-    array (
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'instanceName' => 
-      array (
-        '_v_' => '\\Mageplaza\\Smtp\\Model\\Log',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\Resolver\\Bestsellers\\Bestsellers\\Interceptor' => 
-    array (
-      'dateTime' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Stdlib\\DateTime\\DateTime',
-      ),
-      'reportData' => 
-      array (
-        '_i_' => 'Magento\\Reports\\Helper\\Data',
-      ),
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'bestsellersCollection' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\ResourceModel\\Report\\Bestsellers\\Collection\\Interceptor',
-      ),
-      'storeManager' => 
-      array (
-        '_i_' => 'Magento\\Store\\Model\\StoreManager',
-      ),
-      'productRepository' => 
-      array (
-        '_i_' => 'Magento\\Catalog\\Model\\ProductRepository\\Interceptor',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\AbandonedCart\\Grid\\Collection\\Interceptor' => 
-    array (
-      'entityFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Collection\\EntityFactory',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'fetchStrategy' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Collection\\Db\\FetchStrategy\\Query',
-      ),
-      'eventManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Event\\Manager\\Proxy',
-      ),
-      'mainTable' => 
-      array (
-        '_v_' => 'quote',
-      ),
-      'resourceModel' => 
-      array (
-        '_v_' => 'Magento\\Quote\\Model\\ResourceModel\\Quote',
-      ),
-      'identifierName' => 
-      array (
-        '_vn_' => true,
-      ),
-      'connectionName' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\Log' => 
-    array (
-      'date' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Stdlib\\DateTime\\DateTime',
-      ),
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Model\\ResourceModel\\Db\\Context',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\CollectionFactory' => 
-    array (
-      'objectManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\ObjectManagerInterface',
-      ),
-      'instanceName' => 
-      array (
-        '_v_' => '\\Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Collection',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Collection\\Interceptor' => 
-    array (
-      'entityFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Collection\\EntityFactory',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'fetchStrategy' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Collection\\Db\\FetchStrategy\\Query',
-      ),
-      'eventManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Event\\Manager\\Proxy',
-      ),
-      'connection' => 
-      array (
-        '_vn_' => true,
-      ),
-      'resource' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Grid\\Collection' => 
-    array (
-      'entityFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Collection\\EntityFactory',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'fetchStrategy' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Data\\Collection\\Db\\FetchStrategy\\Query',
-      ),
-      'eventManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Event\\Manager\\Proxy',
-      ),
-      'mainTable' => 
-      array (
-        '_v_' => 'mageplaza_smtp_log',
-      ),
-      'resourceModel' => 
-      array (
-        '_v_' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log',
-      ),
-      'identifierName' => 
-      array (
-        '_vn_' => true,
-      ),
-      'connectionName' => 
-      array (
-        '_vn_' => true,
-      ),
-    ),
-    'Mageplaza\\Smtp\\Model\\Source\\AbandonedCartStatus' => NULL,
-    'Mageplaza\\Smtp\\Model\\Source\\Status' => NULL,
-    'Mageplaza\\Smtp\\Observer\\Customer\\CustomerSaveCommitAfter' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'resourceCustomer' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\ResourceModel\\Customer\\Interceptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Customer\\LoginSuccess' => 
-    array (
-      'fullPageCache' => 
-      array (
-        '_i_' => 'Magento\\PageCache\\Model\\Cache\\Type',
-      ),
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Customer\\ModelSaveBefore' => 
-    array (
-      'customerFactory' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\CustomerFactory',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Customer\\SaveAddress' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Customer\\SubscriberSaveCommitAfter' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'customerRepository' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Model\\ResourceModel\\CustomerRepository\\Interceptor',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Order\\CreditmemoCreate' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Order\\InvoiceCommitAfter' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'resourceOrder' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\ResourceModel\\Order\\Interceptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Order\\OrderComplete' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-      'resourceOrder' => 
-      array (
-        '_i_' => 'Magento\\Sales\\Model\\ResourceModel\\Order\\Interceptor',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Order\\ShipmentCreate' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Quote\\DeleteQuote' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Quote\\SetToken' => 
-    array (
-      'random' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Math\\Random',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Observer\\Quote\\SyncQuote' => 
-    array (
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'logger' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Plugin\\AccountManagement' => 
-    array (
-      'checkoutSession' => 
-      array (
-        '_i_' => 'Magento\\Checkout\\Model\\Session\\Interceptor',
-      ),
-      'cartRepository' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteRepository\\Interceptor',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Plugin\\Config\\ConfigPlugin' => 
-    array (
-      'request' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Request\\Http',
-      ),
-      'messageManager' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Message\\Manager',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Plugin\\Message' => 
-    array (
-      'resourceMail' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Mail\\Rse\\Mail',
-      ),
-      'senderResolver' => 
-      array (
-        '_i_' => 'Magento\\Email\\Model\\Template\\SenderResolver',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Plugin\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductSearchCriteriaBuilder' => 
-    array (
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'filterBuilder' => 
-      array (
-        '_ins_' => 'Magento\\Framework\\Api\\FilterBuilder',
-      ),
-      'filterGroupBuilder' => 
-      array (
-        '_ins_' => 'Magento\\Framework\\Api\\Search\\FilterGroupBuilder',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Plugin\\Model\\Template\\Config' => NULL,
-    'Mageplaza\\Smtp\\Setup\\Patch\\Data\\UpgradeAttributeData' => 
-    array (
-      'moduleDataSetup' => 
-      array (
-        '_i_' => 'Magento\\Setup\\Module\\DataSetup',
-      ),
-      'attributeSetFactory' => 
-      array (
-        '_i_' => 'Magento\\Eav\\Model\\Entity\\Attribute\\SetFactory',
-      ),
-      'customerSetupFactory' => 
-      array (
-        '_i_' => 'Magento\\Customer\\Setup\\CustomerSetupFactory',
-      ),
-      'configCollection' => 
-      array (
-        '_i_' => 'Magento\\Config\\Model\\ResourceModel\\Config\\Data\\Collection\\Interceptor',
-      ),
-      'cacheTypeList' => 
-      array (
-        '_i_' => 'Magento\\Framework\\App\\Cache\\TypeList',
-      ),
-    ),
-    'Mageplaza\\Smtp\\Ui\\Component\\Listing\\Column\\Actions' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\UiComponent\\Context',
-      ),
-      'uiComponentFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\UiComponentFactory',
-      ),
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-      'helperData' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\Data',
-      ),
-      'components' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Smtp\\Ui\\Component\\Listing\\Column\\CustomerName' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\UiComponent\\Context',
-      ),
-      'uiComponentFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\UiComponentFactory',
-      ),
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-      'quoteFactory' => 
-      array (
-        '_i_' => 'Magento\\Quote\\Model\\QuoteFactory',
-      ),
-      'helperEmailMarketing' => 
-      array (
-        '_i_' => 'Mageplaza\\Smtp\\Helper\\EmailMarketing',
-      ),
-      'components' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
-    'Mageplaza\\Smtp\\Ui\\Component\\Listing\\Column\\Views' => 
-    array (
-      'context' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\UiComponent\\Context',
-      ),
-      'uiComponentFactory' => 
-      array (
-        '_i_' => 'Magento\\Framework\\View\\Element\\UiComponentFactory',
-      ),
-      'urlBuilder' => 
-      array (
-        '_i_' => 'Magento\\Framework\\Url',
-      ),
-      'components' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-      'data' => 
-      array (
-        '_v_' => 
-        array (
-        ),
-      ),
-    ),
     'NotifyDataChangedResponseResolver' => 
     array (
       'converter' => 
@@ -238955,7 +237103,7 @@ Line: %line%
       ),
       'backendConfig' => 
       array (
-        '_i_' => 'Magento\\Config\\Model\\Config\\Interceptor',
+        '_i_' => 'Magento\\Config\\Model\\Config',
       ),
       'config' => 
       array (
@@ -246050,9 +244198,6 @@ Line: %line%
     'Magento\\Backend\\Model\\Auth\\StorageInterface' => 'Magento\\Backend\\Model\\Auth\\Session\\Interceptor',
     'Magento\\Backend\\Model\\Cache\\ResourceModel\\Grid\\Collection' => 'Magento\\Backend\\Model\\Cache\\ResourceModel\\Grid\\Collection\\Interceptor',
     'Magento\\Backend\\Model\\Config\\SessionLifetime\\BackendModel' => 'Magento\\Backend\\Model\\Config\\SessionLifetime\\BackendModel\\Interceptor',
-    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Add' => 'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Add\\Interceptor',
-    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Remove' => 'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Remove\\Interceptor',
-    'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Update' => 'Magento\\Backend\\Model\\Menu\\Builder\\Command\\Update\\Interceptor',
     'Magento\\Backend\\Model\\Session' => 'Magento\\Backend\\Model\\Session\\Interceptor',
     'Magento\\Backend\\Model\\Session\\Quote' => 'Magento\\Backend\\Model\\Session\\Quote\\Interceptor',
     'Magento\\Backend\\Model\\UrlInterface' => 'Magento\\Backend\\Model\\Url',
@@ -246182,7 +244327,6 @@ Line: %line%
     'Magento\\CatalogGraphQl\\Model\\Resolver\\Product\\SpecialPrice' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Product\\SpecialPrice\\Interceptor',
     'Magento\\CatalogGraphQl\\Model\\Resolver\\Product\\Websites' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Product\\Websites\\Interceptor',
     'Magento\\CatalogGraphQl\\Model\\Resolver\\Products' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\Interceptor',
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder\\Interceptor',
     'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\Product\\CollectionPostProcessorInterface' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\Product\\CompositeCollectionPostProcessor',
     'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\Product\\CollectionProcessorInterface' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\Product\\CompositeCollectionProcessor',
     'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\Query\\ProductQueryInterface' => 'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\Query\\Search',
@@ -246742,7 +244886,6 @@ Line: %line%
     'Magento\\Config\\Controller\\Adminhtml\\System\\Config\\Index' => 'Magento\\Config\\Controller\\Adminhtml\\System\\Config\\Index\\Interceptor',
     'Magento\\Config\\Controller\\Adminhtml\\System\\Config\\Save' => 'Magento\\Config\\Controller\\Adminhtml\\System\\Config\\Save\\Interceptor',
     'Magento\\Config\\Controller\\Adminhtml\\System\\Config\\State' => 'Magento\\Config\\Controller\\Adminhtml\\System\\Config\\State\\Interceptor',
-    'Magento\\Config\\Model\\Config' => 'Magento\\Config\\Model\\Config\\Interceptor',
     'Magento\\Config\\Model\\Config\\Backend\\Admin\\Custom' => 'Magento\\Config\\Model\\Config\\Backend\\Admin\\Custom\\Interceptor',
     'Magento\\Config\\Model\\Config\\Backend\\Admin\\Custompath' => 'Magento\\Config\\Model\\Config\\Backend\\Admin\\Custompath\\Interceptor',
     'Magento\\Config\\Model\\Config\\Backend\\Admin\\Password\\Link\\Expirationperiod' => 'Magento\\Config\\Model\\Config\\Backend\\Admin\\Password\\Link\\Expirationperiod\\Interceptor',
@@ -246781,7 +244924,6 @@ Line: %line%
     'Magento\\Config\\Model\\Config\\Structure' => 'Magento\\Config\\Model\\Config\\Structure\\Interceptor',
     'Magento\\Config\\Model\\Config\\StructureLazy' => 'Magento\\Config\\Model\\Config\\StructureLazy\\Interceptor',
     'Magento\\Config\\Model\\Config\\Structure\\Converter' => 'Magento\\Config\\Model\\Config\\Structure\\Converter\\Interceptor',
-    'Magento\\Config\\Model\\Config\\Structure\\Data' => 'Magento\\Config\\Model\\Config\\Structure\\Data\\Interceptor',
     'Magento\\Config\\Model\\Config\\Structure\\Element\\Field' => 'Magento\\Config\\Model\\Config\\Structure\\Element\\Field\\Interceptor',
     'Magento\\Config\\Model\\Config\\Structure\\SearchInterface' => 'Magento\\Config\\Model\\Config\\Structure\\Interceptor',
     'Magento\\Config\\Model\\ResourceModel\\Config\\Data\\Collection' => 'Magento\\Config\\Model\\ResourceModel\\Config\\Data\\Collection\\Interceptor',
@@ -247219,7 +245361,6 @@ Line: %line%
     'Magento\\Email\\Model\\Design\\Backend\\Logo' => 'Magento\\Email\\Model\\Design\\Backend\\Logo\\Interceptor',
     'Magento\\Email\\Model\\ResourceModel\\Template\\Collection' => 'Magento\\Email\\Model\\ResourceModel\\Template\\Collection\\Interceptor',
     'Magento\\Email\\Model\\Template' => 'Magento\\Email\\Model\\Template\\Interceptor',
-    'Magento\\Email\\Model\\Template\\Config' => 'Magento\\Email\\Model\\Template\\Config\\Interceptor',
     'Magento\\Email\\Model\\Template\\Filter' => 'Magento\\Email\\Model\\Template\\Filter\\Interceptor',
     'Magento\\Email\\Model\\Transport' => 'Magento\\Email\\Model\\Transport\\Interceptor',
     'Magento\\EncryptionKey\\Block\\Adminhtml\\Crypt\\Key\\Form' => 'Magento\\EncryptionKey\\Block\\Adminhtml\\Crypt\\Key\\Form\\Interceptor',
@@ -247421,7 +245562,6 @@ Line: %line%
     'Magento\\Framework\\Mail\\Template\\FactoryInterface' => 'Magento\\Framework\\Mail\\Template\\Factory',
     'Magento\\Framework\\Mail\\Template\\SenderResolverInterface' => 'Magento\\Email\\Model\\Template\\SenderResolver',
     'Magento\\Framework\\Mail\\Template\\TransportBuilder' => 'Magento\\Framework\\Mail\\Template\\TransportBuilder\\Interceptor',
-    'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore' => 'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore\\Interceptor',
     'Magento\\Framework\\Mail\\Transport' => 'Magento\\Framework\\Mail\\Transport\\Interceptor',
     'Magento\\Framework\\Mail\\TransportInterface' => 'Magento\\Email\\Model\\Transport\\Interceptor',
     'Magento\\Framework\\MessageQueue\\BulkPublisherInterface' => 'Magento\\Framework\\MessageQueue\\Bulk\\PublisherPool',
@@ -249534,31 +247674,6 @@ Line: %line%
     'Magento\\Wishlist\\Model\\ResourceModel\\Item\\Product\\CollectionBuilderInterface' => 'Magento\\Wishlist\\Model\\ResourceModel\\Item\\Product\\CollectionBuilder',
     'Magento\\Wishlist\\Model\\ResourceModel\\Wishlist\\Collection' => 'Magento\\Wishlist\\Model\\ResourceModel\\Wishlist\\Collection\\Interceptor',
     'Magento\\Wishlist\\Pricing\\Render\\ConfiguredPriceBox' => 'Magento\\Wishlist\\Pricing\\Render\\ConfiguredPriceBox\\Interceptor',
-    'Mageplaza\\Core\\Controller\\Adminhtml\\Index\\Activate' => 'Mageplaza\\Core\\Controller\\Adminhtml\\Index\\Activate\\Interceptor',
-    'Mageplaza\\Core\\Controller\\Adminhtml\\Index\\Userguide' => 'Mageplaza\\Core\\Controller\\Adminhtml\\Index\\Userguide\\Interceptor',
-    'Mageplaza\\Core\\Model\\Config\\Backend\\Menu' => 'Mageplaza\\Core\\Model\\Config\\Backend\\Menu\\Interceptor',
-    'Mageplaza\\Smtp\\Api\\CheckoutManagementInterface' => 'Mageplaza\\Smtp\\Model\\CheckoutManagement',
-    'Mageplaza\\Smtp\\Block\\Adminhtml\\AbandonedCart\\Edit\\Form' => 'Mageplaza\\Smtp\\Block\\Adminhtml\\AbandonedCart\\Edit\\Form\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\AbandonedCart\\Recover' => 'Mageplaza\\Smtp\\Controller\\AbandonedCart\\Recover\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Preview' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Preview\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Send' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\Send\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\View' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\AbandonedCart\\View\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Clear' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Clear\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Delete' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Delete\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Email' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Email\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Log' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Log\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Marketing' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Marketing\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\MassDelete' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\MassDelete\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\MassResend' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\MassResend\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Sync\\Estimate' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Sync\\Estimate\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Sync\\Sync' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Sync\\Sync\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Test' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\Test\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\TestConnection' => 'Mageplaza\\Smtp\\Controller\\Adminhtml\\Smtp\\TestConnection\\Interceptor',
-    'Mageplaza\\Smtp\\Controller\\Proxy\\Index' => 'Mageplaza\\Smtp\\Controller\\Proxy\\Index\\Interceptor',
-    'Mageplaza\\Smtp\\Model\\Resolver\\Bestsellers\\Bestsellers' => 'Mageplaza\\Smtp\\Model\\Resolver\\Bestsellers\\Bestsellers\\Interceptor',
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\AbandonedCart\\Grid\\Collection' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\AbandonedCart\\Grid\\Collection\\Interceptor',
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Collection' => 'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Collection\\Interceptor',
     'PayPal\\BraintreeGraphQl\\Model\\Resolver\\CreateBraintreeClientToken' => 'PayPal\\BraintreeGraphQl\\Model\\Resolver\\CreateBraintreeClientToken\\Interceptor',
     'PayPal\\Braintree\\Api\\AuthInterface' => 'PayPal\\Braintree\\Model\\ApplePay\\Auth',
     'PayPal\\Braintree\\Api\\CreditPriceRepositoryInterface' => 'PayPal\\Braintree\\Model\\ResourceModel\\CreditPriceRepository',
@@ -249942,7 +248057,7 @@ Line: %line%
     'Magento\\Ui\\Config\\DefinitionMap\\Data' => 'Magento\\Framework\\Config\\Data',
     'Magento\\Ui\\Config\\Definition\\Data' => 'Magento\\Framework\\Config\\Data',
     'Magento\\UrlRewrite\\Ui\\Component\\UrlRewrite\\DataProvider\\SearchResult' => 'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\SearchResult\\Interceptor',
-    'Magento\\Variable\\Model\\Config\\StructureDataVirtual' => 'Magento\\Config\\Model\\Config\\Structure\\Data\\Interceptor',
+    'Magento\\Variable\\Model\\Config\\StructureDataVirtual' => 'Magento\\Config\\Model\\Config\\Structure\\Data',
     'Magento\\Variable\\Model\\Config\\StructureVirtual' => 'Magento\\Config\\Model\\Config\\StructureLazy\\Interceptor',
     'Magento\\Variable\\Model\\Config\\Structure\\ReaderVirtual' => 'Magento\\Config\\Model\\Config\\Structure\\Reader',
     'Magento\\WebapiAsync\\Controller\\Rest\\VirtualType\\AsynchronousBulkRequestProcessor' => 'Magento\\WebapiAsync\\Controller\\Rest\\AsynchronousRequestProcessor',
@@ -249955,7 +248070,6 @@ Line: %line%
     'Magento\\WebapiAsync\\Model\\MassSchedule' => 'Magento\\AsynchronousOperations\\Model\\MassSchedule',
     'Magento\\WebapiAsync\\Model\\VirtualType\\Rest\\Config' => 'Magento\\Webapi\\Model\\Rest\\Config\\Interceptor',
     'Magento\\Wishlist\\Block\\Context' => 'Magento\\Catalog\\Block\\Product\\Context',
-    'Mageplaza\\Smtp\\Model\\ResourceModel\\Log\\Grid\\Collection' => 'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\SearchResult\\Interceptor',
     'NotifyDataChangedResponseResolver' => 'Magento\\Analytics\\Model\\Connector\\Http\\ResponseResolver',
     'OmsTableNameArrayIterator' => 'Magento\\Framework\\ForeignKey\\Migration\\TableNameArrayIterator',
     'OrderRelationsComposite' => 'Magento\\Framework\\Model\\ResourceModel\\Db\\VersionControl\\RelationComposite',
@@ -250024,7 +248138,7 @@ Line: %line%
     'additionalFieldsProviderForElasticsearch' => 'Magento\\AdvancedSearch\\Model\\Adapter\\DataMapper\\AdditionalFieldsProvider',
     'adminhtmlConfigScope' => 'Magento\\Framework\\Config\\Scope',
     'adminhtmlConfigStructure' => 'Magento\\Config\\Model\\Config\\Structure\\Interceptor',
-    'adminhtmlConfigStructureData' => 'Magento\\Config\\Model\\Config\\Structure\\Data\\Interceptor',
+    'adminhtmlConfigStructureData' => 'Magento\\Config\\Model\\Config\\Structure\\Data',
     'appDumpConfigSystemSource' => 'Magento\\Config\\App\\Config\\Source\\DumpConfigSourceAggregated\\Interceptor',
     'appDumpEnvSystemSource' => 'Magento\\Config\\App\\Config\\Source\\DumpConfigSourceAggregated\\Interceptor',
     'appDumpSystemSource' => 'Magento\\Config\\App\\Config\\Source\\DumpConfigSourceAggregated\\Interceptor',

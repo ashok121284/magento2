@@ -106,14 +106,6 @@
         'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\CacheInvalidator',
       ),
     ),
-    'Magento\\Config\\Model\\Config' => 
-    array (
-      'mp_smtp_config_plugin' => 
-      array (
-        'sortOrder' => 1,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Config\\ConfigPlugin',
-      ),
-    ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage' => 
     array (
       'media_gallery_image_remove_metadata_after_wysiwyg' => 
@@ -295,11 +287,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Security\\Model\\Plugin\\AccountManagement',
-      ),
-      'mpsmtp_account_management' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\AccountManagement',
       ),
     ),
     'Magento\\Customer\\Api\\GroupRepositoryInterface' => 
@@ -1441,12 +1428,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Email\\Model\\Mail\\TransportInterfacePlugin',
-      ),
-      'mageplaza_mail_transport' => 
-      array (
-        'sortOrder' => 1,
-        'disabled' => false,
-        'instance' => 'Mageplaza\\Smtp\\Mail\\Transport',
       ),
     ),
     'Magento\\Email\\Model\\AbstractTemplate' => 
@@ -2980,31 +2961,6 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilder' => 
-    array (
-      'mageplaza_mail_template_transport_builder' => 
-      array (
-        'sortOrder' => 1,
-        'disabled' => false,
-        'instance' => 'Mageplaza\\Smtp\\Mail\\Template\\TransportBuilder',
-      ),
-    ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore' => 
-    array (
-      'mpsmtp_appTransportBuilder' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Message',
-      ),
-    ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder' => 
-    array (
-      'mpsmtp_search_criteria_builder' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductSearchCriteriaBuilder',
-      ),
-    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -3771,30 +3727,6 @@
         'instance' => 'Magento\\Usps\\Block\\Adminhtml\\Order\\Packaging\\Plugin\\DisplayGirth',
       ),
     ),
-    'Magento\\Config\\Model\\Config\\Structure\\Data' => 
-    array (
-      'mageplaza_module_activate' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Core\\Model\\Config\\Structure\\Data',
-      ),
-    ),
-    'Magento\\Backend\\Model\\Menu\\Builder\\AbstractCommand' => 
-    array (
-      'mageplaza_move_menu' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Core\\Plugin\\MoveMenu',
-      ),
-    ),
-    'Magento\\Email\\Model\\Template\\Config' => 
-    array (
-      'mageplaza_smtp_template_abandoned_cart' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Model\\Template\\Config',
-      ),
-    ),
     'Magento\\Sales\\Model\\ResourceModel\\Order\\Grid\\Collection' => 
     array (
       'braintreeSalesOrderGrid' => 
@@ -4037,14 +3969,6 @@
         'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\CacheInvalidator',
       ),
     ),
-    'Magento\\Config\\Model\\Config' => 
-    array (
-      'mp_smtp_config_plugin' => 
-      array (
-        'sortOrder' => 1,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Config\\ConfigPlugin',
-      ),
-    ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage' => 
     array (
       'media_gallery_image_remove_metadata_after_wysiwyg' => 
@@ -4258,11 +4182,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Security\\Model\\Plugin\\AccountManagement',
-      ),
-      'mpsmtp_account_management' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\AccountManagement',
       ),
     ),
     'Magento\\Customer\\Api\\GroupRepositoryInterface' => 
@@ -6115,12 +6034,6 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Email\\Model\\Mail\\TransportInterfacePlugin',
       ),
-      'mageplaza_mail_transport' => 
-      array (
-        'sortOrder' => 1,
-        'disabled' => false,
-        'instance' => 'Mageplaza\\Smtp\\Mail\\Transport',
-      ),
     ),
     'Magento\\Framework\\App\\TemplateTypesInterface' => NULL,
     'Magento\\Email\\Model\\AbstractTemplate' => 
@@ -7841,31 +7754,6 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilder' => 
-    array (
-      'mageplaza_mail_template_transport_builder' => 
-      array (
-        'sortOrder' => 1,
-        'disabled' => false,
-        'instance' => 'Mageplaza\\Smtp\\Mail\\Template\\TransportBuilder',
-      ),
-    ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore' => 
-    array (
-      'mpsmtp_appTransportBuilder' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Message',
-      ),
-    ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder' => 
-    array (
-      'mpsmtp_search_criteria_builder' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductSearchCriteriaBuilder',
-      ),
-    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -9003,32 +8891,6 @@
         'instance' => 'Magento\\Usps\\Block\\Adminhtml\\Order\\Packaging\\Plugin\\DisplayGirth',
       ),
     ),
-    'Magento\\Framework\\Config\\Data\\Scoped' => NULL,
-    'Magento\\Config\\Model\\Config\\Structure\\Data' => 
-    array (
-      'mageplaza_module_activate' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Core\\Model\\Config\\Structure\\Data',
-      ),
-    ),
-    'Magento\\Backend\\Model\\Menu\\Builder\\AbstractCommand' => 
-    array (
-      'mageplaza_move_menu' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Core\\Plugin\\MoveMenu',
-      ),
-    ),
-    'Magento\\Framework\\Mail\\Template\\ConfigInterface' => NULL,
-    'Magento\\Email\\Model\\Template\\Config' => 
-    array (
-      'mageplaza_smtp_template_abandoned_cart' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Mageplaza\\Smtp\\Plugin\\Model\\Template\\Config',
-      ),
-    ),
     'Magento\\Sales\\Model\\ResourceModel\\Order\\Grid\\Collection' => 
     array (
       'currentPageDetection' => 
@@ -9164,13 +9026,6 @@
       4 => 
       array (
         0 => 'webapiResourceSecurityCacheInvalidate',
-      ),
-    ),
-    'Magento\\Config\\Model\\Config_save___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'mp_smtp_config_plugin',
       ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage_deleteFile___self' => 
@@ -9385,13 +9240,6 @@
       1 => 
       array (
         0 => 'security_check_customer_password_reset_attempt',
-      ),
-    ),
-    'Magento\\Customer\\Model\\AccountManagement_isEmailAvailable___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'mpsmtp_account_management',
       ),
     ),
     'Magento\\Customer\\Api\\GroupRepositoryInterface_save___self' => 
@@ -10913,10 +10761,6 @@
       ),
       2 => 'EmailDisable',
     ),
-    'Magento\\Framework\\Mail\\TransportInterface_sendMessage_EmailDisable' => 
-    array (
-      2 => 'mageplaza_mail_transport',
-    ),
     'Magento\\Email\\Model\\AbstractTemplate_getUrl___self' => 
     array (
       1 => 
@@ -12335,31 +12179,6 @@
         0 => 'authentication',
       ),
     ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilder_setTemplateOptions___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'mageplaza_mail_template_transport_builder',
-      ),
-    ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilder_setFrom___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'mageplaza_mail_template_transport_builder',
-      ),
-    ),
-    'Magento\\Framework\\Mail\\Template\\TransportBuilderByStore_setFromByStore___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'mpsmtp_appTransportBuilder',
-      ),
-    ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Products\\DataProvider\\ProductSearch\\ProductCollectionSearchCriteriaBuilder_build___self' => 
-    array (
-      2 => 'mpsmtp_search_criteria_builder',
-    ),
     'Magento\\Framework\\View\\Asset\\Minification_getExcludes___self' => 
     array (
       4 => 
@@ -13357,27 +13176,6 @@
     'Magento\\Shipping\\Block\\Adminhtml\\Order\\Packaging_isDisplayGirthValue___self' => 
     array (
       2 => 'usps',
-    ),
-    'Magento\\Config\\Model\\Config\\Structure\\Data_merge___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'mageplaza_module_activate',
-      ),
-    ),
-    'Magento\\Backend\\Model\\Menu\\Builder\\AbstractCommand_execute___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'mageplaza_move_menu',
-      ),
-    ),
-    'Magento\\Email\\Model\\Template\\Config_getAvailableTemplates___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'mageplaza_smtp_template_abandoned_cart',
-      ),
     ),
     'Magento\\Sales\\Model\\ResourceModel\\Order\\Grid\\Collection_getCurPage___self' => 
     array (
