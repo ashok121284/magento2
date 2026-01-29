@@ -4602,3 +4602,105 @@ Did you mean one of these?
 [2026-01-01T21:13:06.316866+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
 [2026-01-01T21:13:06.317766+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
 [2026-01-01T21:13:06.318784+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:21.531167+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:21.535699+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:21.537123+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:21.538167+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:21.539131+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:21.540103+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.792636+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.793336+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.793824+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.794291+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.795034+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.795532+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.796095+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.796614+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.797085+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.797553+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.798019+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.798560+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.799038+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.799505+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.799969+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.800457+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.801306+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.801812+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:39.802521+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:39.803034+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:39.803500+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:39.803988+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:39.804461+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2026-01-27T18:55:39.804950+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:39.805419+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:39.805914+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2026-01-27T18:55:44.378041+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.378962+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.379869+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.380574+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.381115+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.381727+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.382753+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.383664+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.384604+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.385474+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.386021+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.386618+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.387180+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.387665+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.388148+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.388618+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.389215+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.389689+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2026-01-27T18:55:44.390214+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:44.390750+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:44.391251+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:44.391717+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:44.392180+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2026-01-27T18:55:44.392666+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:44.393159+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2026-01-27T18:55:44.393663+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2026-01-27T18:57:36.184235+00:00] main.ERROR: An existing user has the given username but different email. Username and email both need to match an existing user or both be new.
+#0 /var/www/html/magento2/setup/src/Magento/Setup/Model/AdminAccount.php(113): Magento\Setup\Model\AdminAccount->validateUserMatches()
+#1 /var/www/html/magento2/setup/src/Magento/Setup/Model/AdminAccount.php(83): Magento\Setup\Model\AdminAccount->saveAdminUser()
+#2 /var/www/html/magento2/setup/src/Magento/Setup/Model/Installer.php(1348): Magento\Setup\Model\AdminAccount->save()
+#3 /var/www/html/magento2/setup/src/Magento/Setup/Console/Command/AdminUserCreateCommand.php(166): Magento\Setup\Model\Installer->installAdminUser()
+#4 /var/www/html/magento2/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\AdminUserCreateCommand->execute()
+#5 /var/www/html/magento2/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run()
+#6 /var/www/html/magento2/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand()
+#7 /var/www/html/magento2/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun()
+#8 /var/www/html/magento2/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun()
+#9 /var/www/html/magento2/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2026-01-27T18:58:21.876806+00:00] main.ERROR: An existing user has the given email but different username. Username and email both need to match an existing user or both be new.
+#0 /var/www/html/magento2/setup/src/Magento/Setup/Model/AdminAccount.php(113): Magento\Setup\Model\AdminAccount->validateUserMatches()
+#1 /var/www/html/magento2/setup/src/Magento/Setup/Model/AdminAccount.php(83): Magento\Setup\Model\AdminAccount->saveAdminUser()
+#2 /var/www/html/magento2/setup/src/Magento/Setup/Model/Installer.php(1348): Magento\Setup\Model\AdminAccount->save()
+#3 /var/www/html/magento2/setup/src/Magento/Setup/Console/Command/AdminUserCreateCommand.php(166): Magento\Setup\Model\Installer->installAdminUser()
+#4 /var/www/html/magento2/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\AdminUserCreateCommand->execute()
+#5 /var/www/html/magento2/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run()
+#6 /var/www/html/magento2/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand()
+#7 /var/www/html/magento2/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun()
+#8 /var/www/html/magento2/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun()
+#9 /var/www/html/magento2/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2026-01-27T18:59:30.894762+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2026-01-27T18:59:56.732683+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2026-01-27T19:00:05.695257+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2026-01-27T19:00:11.115684+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2026-01-27T19:07:32.384279+00:00] main.ERROR: The "/var/www/html/magento2/var/cache/mage--4/mage---ea6_BLOCK_AA0D1879257E4BF454FAF87F1169A1BB7943FAFC" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--4/mage---ea6_BLOCK_AA0D1879257E4BF454FAF87F1169A1BB7943FAFC): Permission denied The "/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_B04703DCE8DF5A9D55E2EA4DE3D5AA22" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_B04703DCE8DF5A9D55E2EA4DE3D5AA22): Permission denied The "/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_A2C1C32693F8AFC32458A8B065D680FE" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_A2C1C32693F8AFC32458A8B065D680FE): Permission denied The "/var/www/html/magento2/var/cache/mage--c/mage---ea6_BLOCK_CA2D04F236756BAF985ADFB6B192354441B4BC96" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--c/mage---ea6_BLOCK_CA2D04F236756BAF985ADFB6B192354441B4BC96): Permission denied The "/var/www/html/magento2/var/cache/mage--4/mage---ea6_BLOCK_AA0D1879257E4BF454FAF87F1169A1BB7943FAFC" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--4/mage---ea6_BLOCK_AA0D1879257E4BF454FAF87F1169A1BB7943FAFC): Permission denied The "/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_B04703DCE8DF5A9D55E2EA4DE3D5AA22" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_B04703DCE8DF5A9D55E2EA4DE3D5AA22): Permission denied The "/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_A2C1C32693F8AFC32458A8B065D680FE" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--4/mage---ea6_DESIGN_CHANGE_A2C1C32693F8AFC32458A8B065D680FE): Permission denied The "/var/www/html/magento2/var/cache/mage--c/mage---ea6_BLOCK_CA2D04F236756BAF985ADFB6B192354441B4BC96" file can't be deleted. Warning!unlink(/var/www/html/magento2/var/cache/mage--c/mage---ea6_BLOCK_CA2D04F236756BAF985ADFB6B192354441B4BC96): Permission denied
+#0 /var/www/html/magento2/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(309): Magento\Framework\Filesystem\Directory\Write->delete()
+#1 /var/www/html/magento2/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(183): Magento\Setup\Console\Command\DiCompileCommand->cleanupFilesystem()
+#2 /var/www/html/magento2/vendor/symfony/console/Command/Command.php(298): Magento\Setup\Console\Command\DiCompileCommand->execute()
+#3 /var/www/html/magento2/vendor/symfony/console/Application.php(1040): Symfony\Component\Console\Command\Command->run()
+#4 /var/www/html/magento2/vendor/symfony/console/Application.php(301): Symfony\Component\Console\Application->doRunCommand()
+#5 /var/www/html/magento2/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun()
+#6 /var/www/html/magento2/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun()
+#7 /var/www/html/magento2/bin/magento(23): Symfony\Component\Console\Application->run()
+#8 {main} [] []
+[2026-01-27T19:19:54.385158+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T19:19:54.388112+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T19:19:54.388857+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T19:19:54.389398+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T19:19:54.389887+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2026-01-27T19:19:54.390409+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
