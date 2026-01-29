@@ -43,7 +43,7 @@
         </settings>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
-        <exportButton name="export_button" />
+        <exportButton name="export_button"/>
         <filterSearch name="fulltext"/>
         <filters name="listing_filters">
             <filterSelect name="store_id" provider="${ $.parentName }">

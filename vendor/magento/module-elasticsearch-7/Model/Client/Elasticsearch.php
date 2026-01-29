@@ -335,7 +335,7 @@ class Elasticsearch implements ClientInterface
      */
     public function query(array $query): array
     {
-      return $this->getElasticsearchClient()->search($query);
+        return $this->getElasticsearchClient()->search($query);
     }
 
     /**

@@ -121,8 +121,8 @@ class ListProduct extends AbstractProduct implements IdentityInterface
         if ($this->_productCollection === null) {
             $this->_productCollection = $this->initializeProductCollection();
         }
-       
-       return $this->_productCollection;
+
+        return $this->_productCollection;
     }
 
     /**
@@ -449,7 +449,6 @@ class ListProduct extends AbstractProduct implements IdentityInterface
     private function initializeProductCollection()
     {
         $layer = $this->getLayer();
-       
         /* @var $layer Layer */
         if ($this->getShowRootCategory()) {
             $this->setCategoryId($this->_storeManager->getStore()->getRootCategoryId());
@@ -528,7 +527,6 @@ class ListProduct extends AbstractProduct implements IdentityInterface
             $toolbar->setModes($modes);
         }
         // set collection to toolbar and apply sort
-      
         $toolbar->setCollection($collection);
         $this->setChild('toolbar', $toolbar);
     }

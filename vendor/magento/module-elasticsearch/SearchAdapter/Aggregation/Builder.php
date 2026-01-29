@@ -76,7 +76,6 @@ class Builder
      */
     public function build(RequestInterface $request, array $queryResult)
     {
-
         $aggregations = [];
         $buckets = $request->getAggregation();
 
@@ -96,6 +95,7 @@ class Builder
         }
 
         $this->query = null;
+
         return $aggregations;
     }
 

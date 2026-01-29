@@ -97,6 +97,7 @@ class Builder
                 'query' => [],
             ],
         ];
+
         return $searchQuery;
     }
 

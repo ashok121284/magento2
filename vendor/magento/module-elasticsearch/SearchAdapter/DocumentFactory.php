@@ -29,7 +29,7 @@ class DocumentFactory
      */
     public function __construct(EntityMetadata $entityMetadata)
     {
-       $this->entityMetadata = $entityMetadata;
+        $this->entityMetadata = $entityMetadata;
     }
 
     /**
@@ -57,6 +57,7 @@ class DocumentFactory
                 );
             }
         }
+
         return new Document(
             [
                 DocumentInterface::ID => $documentId,

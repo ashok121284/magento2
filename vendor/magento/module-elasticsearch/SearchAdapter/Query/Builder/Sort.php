@@ -120,7 +120,7 @@ class Sort
                     'order' => strtolower($item['direction'] ?? '')
                 ]
             ];
-        }      
+        }
 
         return $sorts;
     }

@@ -4313,8 +4313,8 @@
             "type": "library",
             "extra": {
                 "laminas": {
-                    "config-provider": "Laminas\\Diactoros\\ConfigProvider",
-                    "module": "Laminas\\Diactoros"
+                    "module": "Laminas\\Diactoros",
+                    "config-provider": "Laminas\\Diactoros\\ConfigProvider"
                 }
             },
             "installation-source": "dist",
@@ -5237,6 +5237,7 @@
                     "type": "community_bridge"
                 }
             ],
+            "abandoned": "symfony/mime",
             "install-path": "../laminas/laminas-mime"
         },
         {
@@ -7417,10 +7418,10 @@
             "time": "2022-12-01T15:21:32+00:00",
             "type": "composer-plugin",
             "extra": {
+                "class": "MagentoHackathon\\Composer\\Magento\\Plugin",
                 "composer-command-registry": [
                     "MagentoHackathon\\Composer\\Magento\\Command\\DeployCommand"
-                ],
-                "class": "MagentoHackathon\\Composer\\Magento\\Plugin"
+                ]
             },
             "installation-source": "dist",
             "autoload": {
@@ -18454,12 +18455,6 @@
                 "OSL-3.0",
                 "AFL-3.0"
             ],
-            "authors": [
-                {
-                    "name": "Kalpesh Mehta",
-                    "email": "k@lpe.sh"
-                }
-            ],
             "description": "Security.txt file for Magento 2 websites",
             "install-path": "../magento/module-securitytxt"
         },
@@ -25844,9 +25839,9 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "v10.0": "10.0.x-dev",
+                    "v8.3": "8.3.x-dev",
                     "v9.0": "9.0.x-dev",
-                    "v8.3": "8.3.x-dev"
+                    "v10.0": "10.0.x-dev"
                 }
             },
             "installation-source": "dist",

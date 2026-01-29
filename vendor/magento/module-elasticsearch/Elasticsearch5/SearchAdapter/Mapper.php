@@ -67,7 +67,6 @@ class Mapper
     public function buildQuery(RequestInterface $request)
     {
         $searchQuery = $this->queryBuilder->initQuery($request);
-
         $searchQuery['body']['query'] = array_merge(
             $searchQuery['body']['query'],
             $this->processQuery(
@@ -80,6 +79,7 @@ class Mapper
         if (isset($searchQuery['body']['query']['bool']['should'])) {
             $searchQuery['body']['query']['bool']['minimum_should_match'] = 1;
         }
+
         return $this->queryBuilder->initAggregations($request, $searchQuery);
     }
 
