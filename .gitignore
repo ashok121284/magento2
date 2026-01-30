@@ -1,4 +1,5 @@
-pub/
-var/
+/pub/
+/var/
+/var/log/
 generated/
 composer.lock

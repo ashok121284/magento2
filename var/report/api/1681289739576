@@ -1,1 +1,0 @@
-"Fatal Error: 'Allowed memory size of 792723456 bytes exhausted (tried to allocate 769658880 bytes)' in '\/var\/www\/html\/magento2\/app\/code\/Ak\/ExtensionAttribute\/Plugin\/OrderRepositoryPlugin.php' on line 26"
