@@ -1,5 +1,5 @@
 <?php
-namespace Ak\CustomPayment\Model;
+namespace Ak\Paymentoncredit\Model;
 
 use Magento\Payment\Model\Method\AbstractMethod;
 use Magento\Framework\Exception\LocalizedException;

@@ -1,7 +1,6 @@
 <?php return array (
   'AdobeStock\\Api\\Request\\LicenseFactory' => false,
   'Ak\\CustomCache\\Model\\Cache\\Type\\Customcache' => false,
-  'Ak\\CustomPayment\\Model\\Paymentoncredit' => false,
   'Ak\\CustomShipping\\Model\\Carrier\\Shipping' => false,
   'Ak\\ExtensionAttribute\\Api\\Data\\AkAttributeInterface' => false,
   'Ak\\ExtensionAttribute\\Model\\AkAttribute' => false,
@@ -12,6 +11,7 @@
   'Ak\\OrderGridExport\\Controller\\Adminhtml\\Export\\GridToXls\\Interceptor' => false,
   'Ak\\OrderGridExport\\Model\\Export\\ConvertToCustomCsv' => false,
   'Ak\\OrderGridExport\\Model\\Export\\ConvertToXls' => false,
+  'Ak\\Paymentoncredit\\Model\\Paymentoncredit' => false,
   'AlignmentSource' => false,
   'AlternativeSourceProcessors' => false,
   'AppearanceSourceBanner' => false,

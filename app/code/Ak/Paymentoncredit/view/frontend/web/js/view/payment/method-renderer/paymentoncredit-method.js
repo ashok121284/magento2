@@ -6,10 +6,7 @@ define(
         'use strict';
         return Component.extend({
             defaults: {
-                template: 'Ak_CustomPayment/payment/simple'
-            },
-            getMailingAddress: function () {
-                return window.checkoutConfig.payment.checkmo.mailingAddress;
+                template: 'Ak_Paymentoncredit/payment/paymentoncredit'
             },
         });
     }

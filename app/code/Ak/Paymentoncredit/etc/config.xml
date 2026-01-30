@@ -3,14 +3,14 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <simple>
+            <paymentoncredit>
                 <active>1</active>
                 <model>Ak\Paymentoncredit\Model\Paymentoncredit</model>
                 <order_status>pending</order_status>
                 <title>Payment On Credit</title>
                 <allowspecific>0</allowspecific>
                 <group>Offline</group>
-            </simple>
+            </paymentoncredit>
         </payment>
     </default>
 </config>

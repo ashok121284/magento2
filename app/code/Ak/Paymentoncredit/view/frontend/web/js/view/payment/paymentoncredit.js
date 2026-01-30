@@ -8,8 +8,8 @@ define(
         'use strict';
         rendererList.push(
             {
-                type: 'simple',
-                component: 'Ak_CustomPayment/js/view/payment/method-renderer/simple-method'
+                type: 'paymentoncredit',
+                component: 'Ak_Paymentoncredit/js/view/payment/method-renderer/paymentoncredit-method'
             }
         );
         return Component.extend({});

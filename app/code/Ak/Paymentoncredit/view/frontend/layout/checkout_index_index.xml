@@ -16,8 +16,8 @@
                                                     <item name="children" xsi:type="array">
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <item name="offline-payments" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Magento_OfflinePayments/js/view/payment/offline-payments</item>
+                                                                <item name="paymentoncredit" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Ak_Paymentoncredit/js/view/payment/paymentoncredit</item>
                                                                     <item name="methods" xsi:type="array">
                                                                         <item name="paymentoncredit" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
