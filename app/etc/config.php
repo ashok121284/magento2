@@ -329,8 +329,10 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Ak_CustomCache' => 1,
         'Ak_CustomShipping' => 1,
+        'Ak_CustomTest' => 1,
         'Ak_ExtensionAttribute' => 1,
         'Ak_OrderGridExport' => 1,
+        'Ak_Paymentoncredit' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1

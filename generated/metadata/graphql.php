@@ -19,6 +19,55 @@
         '_i_' => 'Magento\\Framework\\App\\Cache\\Type\\FrontendPool',
       ),
     ),
+    'Ak\\CustomPayment\\Model\\Paymentoncredit' => 
+    array (
+      'context' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Model\\Context',
+      ),
+      'registry' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Registry',
+      ),
+      'extensionFactory' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Api\\ExtensionAttributesFactory',
+      ),
+      'customAttributeFactory' => 
+      array (
+        '_i_' => 'Magento\\Framework\\Api\\AttributeValueFactory',
+      ),
+      'paymentData' => 
+      array (
+        '_i_' => 'Magento\\Payment\\Helper\\Data',
+      ),
+      'scopeConfig' => 
+      array (
+        '_i_' => 'Magento\\Framework\\App\\Config',
+      ),
+      'logger' => 
+      array (
+        '_i_' => 'Magento\\Payment\\Model\\Method\\Logger',
+      ),
+      'resource' => 
+      array (
+        '_vn_' => true,
+      ),
+      'resourceCollection' => 
+      array (
+        '_vn_' => true,
+      ),
+      'data' => 
+      array (
+        '_v_' => 
+        array (
+        ),
+      ),
+      'directory' => 
+      array (
+        '_vn_' => true,
+      ),
+    ),
     'Ak\\CustomShipping\\Model\\Carrier\\Shipping' => 
     array (
       'scopeConfig' => 
